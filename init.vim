@@ -1,8 +1,8 @@
 " archivos de configuracion vimL
 source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/configs/remaps.vim
-source ~/.config/nvim/configs/startify.vim
-source ~/.config/nvim/configs/lightline_and_nerdtree.vim
+source ~/.config/nvim/config/remaps.vim
+source ~/.config/nvim/config/startify.vim
+source ~/.config/nvim/config/lightline_and_nerdtree.vim
 
 " archivos de configuracion lua
 lua require('elias/nvimtree')
