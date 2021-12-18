@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 " Coconut oil vim navigation through files
 Plug 'nvim-lua/plenary.nvim' " don't forget to add this one if you don't have it yet!
 Plug 'ThePrimeagen/harpoon'
-Plug 'kyazdani42/nvim-web-devicons'
 
 " start page
 Plug 'mhinz/vim-startify'
@@ -34,6 +33,7 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 "Autocompletado y lsp
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -52,6 +52,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
 
 " Themes and customization

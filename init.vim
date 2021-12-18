@@ -19,6 +19,7 @@ autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
 " lsp
 hi Todo guibg=#2BFF75
+let g:python_highlight_space_errors=0
 hi Todo guifg=#232323
 hi Pmenu guibg=#333333
 hi LspDiagnosticsUnderlineHint guifg=#999999

@@ -13,10 +13,10 @@ inoremap <C-\> <C-w>
 nnoremap U <C-r> 
 
 " harpoon
-nnoremap <leader>; :lua require("harpoon.ui").nav_next()<cr>
-nnoremap <leader>' :lua require("harpoon.ui").nav_prev()<cr>
-nnoremap <leader>hh :lua require("harpoon.mark").add_file()<cr>
-nnoremap <leader>hu :lua require("harpoon.ui").toggle_quick_menu()<cr>
+nnoremap <silent><leader>' :lua require("harpoon.ui").nav_next()<cr>
+nnoremap <silent><leader>; :lua require("harpoon.ui").nav_prev()<cr>
+nnoremap <silent><leader>hh :lua require("harpoon.mark").add_file()<cr>
+nnoremap <silent><leader>hu :lua require("harpoon.ui").toggle_quick_menu()<cr>
 
 "saving files and exit vim
 nnoremap <leader>w :w<CR>
@@ -96,7 +96,7 @@ inoremap <C-l> <right>
 nnoremap <leader>cd :cd %:h <CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>SO :tabnew $MYVIMRC<CR>
-nnoremap <leader>sm :e ~/.config/nvim/configs/remaps.vim<CR>
+nnoremap <leader>sm :e ~/.config/nvim/config/remaps.vim<CR>
 nnoremap <leader>sp :e ~/.config/nvim/plugins.vim<CR>
 
 " function tree
