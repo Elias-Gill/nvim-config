@@ -1,35 +1,51 @@
-" archivos de configuracion vimL
+"color themes
+set termguicolors
+
+" ----- archivos vimL -----
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/config/remaps.vim
 source ~/.config/nvim/config/startify.vim
-source ~/.config/nvim/config/lightline_and_nerdtree.vim
+source ~/.config/nvim/config/NvimTree.vim
+"source ~/.config/nvim/config/ligthline.vim
 
-" archivos de configuracion lua
+
+" ----- archivos lua ------
+" buitin lsp
+lua require('elias/lsp/lspsaga') 
+lua require('elias/lsp/nvim_cmp') 
+lua require('elias/lsp/diagnostics') 
+lua require('elias/lsp/lsp_servers') 
+"lua require('elias/nvim_compe') 
+
+" utils
+lua require('elias/lualine') 
 lua require('elias/nvimtree')
-lua require('elias/completation') 
-lua require('elias/diagnostics') 
+lua require('elias/colorizer') 
 lua require('elias/treesitter') 
-"lua require('elias/saga') 
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme ghostshell
+" ----------------------------
+
+command JsonParse :%!python3.9 -m json.tool
+command Bw :Bwipeout hidden
 
 " Para trabajar con el asqueroso SL pero desde un editor medianamente decente
 autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
 " lsp
-hi Todo guibg=#2BFF75
+colorscheme ghostshell
+let g:gruvbox_contrast_dark='hard'
+
 let g:python_highlight_space_errors=0
+hi Todo guibg=#2BFF75
 hi Todo guifg=#232323
 hi Pmenu guibg=#333333
 hi LspDiagnosticsUnderlineHint guifg=#999999
 
-" general
-hi Normal guibg=#232323
 hi ColorColumn guibg=#444444
 hi MatchParen guibg=grey guifg=white
+"hi Normal guibg=#232323
+"hi TabLineFill guibg=#111111
 
-" utilitis
 hi VimWikiLink guifg=#978fff 
 hi StartifyHeader guifg=#ffffff 
 hi StartifySection guifg=#359dc2 
@@ -41,8 +57,8 @@ set completeopt=menuone,noselect
 "opciones generales
 " folding
 set nofoldenable
-set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=expr
 
 " indentation
 set nolist
@@ -89,10 +105,6 @@ set showmatch
 set ignorecase
 set smartcase
 
-
-"color themes
-set termguicolors
-
 "emmet html
 let g:user_emmet_mode='i'
 autocmd FileType html,css EmmetInstall
@@ -127,7 +139,6 @@ autocmd BufReadPost *.sl set filetype=javascript
 "Tabline
 let g:airline_powerline_fonts = 1
 set guifont=terminess-ttf-nerd-font-mono:h11
-hi TabLineFill guibg=#111111
 
 
 ""PARA RESALTAR LAS VARIABLES DEBAJO DEL CURSOR
@@ -150,12 +161,3 @@ let g:Tex_GotoError = 0
 
 " NvimTree
 let g:nvim_tree_quit_on_open = 1
-
-" Wipe all deleted (unloaded & unlisted) or all unloaded buffers
-function s:bdelete() abort
-    let l:buffers = filter(getbufinfo(), {_, v -> !v.loaded && v.listed})
-    if !empty(l:buffers)
-        execute 'bwipeout' join(map(l:buffers, {_, v -> v.bufnr}))
-    endif
-endfunction
-command! -bar Bdelete call s:bdelete()
