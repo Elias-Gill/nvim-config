@@ -1,18 +1,3 @@
-
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✘",
-    \   'staged': "👌",
-    \   'unmerged': "",
-    \   'renamed': "✍",
-    \   'untracked': "👀",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   }
-    \ }
-
 " Ligthline configs
 let g:lightline = {
   \   'colorscheme': 'ayu_dark',
@@ -39,20 +24,6 @@ let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
   \   'right': [ ['close'] ]
   \ }
-
-"" NERDtree GIT integration
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-    "\ 'Modified'  :'✹',
-    "\ 'Staged'    :'✚',
-    "\ 'Untracked' :'✭',
-    "\ 'Renamed'   :'➜',
-    "\ 'Unmerged'  :'═',
-    "\ 'Deleted'   :'✖',
-    "\ 'Dirty'     :'✗',
-    "\ 'Ignored'   :'☒',
-    "\ 'Clean'     :'✔︎',
-    "\ 'Unknown'   :'?',
-"\ }
 
 
 function! LightlineModified()

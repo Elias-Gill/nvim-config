@@ -1,7 +1,5 @@
 " ocmd BufWinEnter *.* silent loadview"
 let mapleader = " ""json files
-
-command JsonParse :%!python -m json.tool " formatear archivos json
 nnoremap <leader>ci :call NERDComment('n', 'Append')<cr>
 
 nnoremap ;; A;<esc>
@@ -11,6 +9,7 @@ tnoremap <esc> <c-\><c-n>
 
 inoremap <C-\> <C-w>
 nnoremap U <C-r> 
+nnoremap <C-\> :ToggleTerm <cr> 
 
 " harpoon
 nnoremap <silent><leader>' :lua require("harpoon.ui").nav_next()<cr>
@@ -22,6 +21,7 @@ nnoremap <silent><leader>hu :lua require("harpoon.ui").toggle_quick_menu()<cr>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wf :w!<CR>
 nnoremap <leader>q :q<CR>
+command Q :q
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>tt :wqa<cr>
 nnoremap <leader>wa :wa<cr>
@@ -59,9 +59,9 @@ nnoremap <leader>sb :Bracey<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> ga <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent>co <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent><leader>to :TroubleToggle<CR>
 
 
@@ -76,8 +76,6 @@ nnoremap <S-tab> gT
 nnoremap <TAB> gt
 
 "MOVERSE ENTRE SPLITS
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 
@@ -91,6 +89,12 @@ vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+
+" navigate trouhg splits
+nnoremap <C-j> <c-w>j
+nnoremap <C-k> <c-w>k
+nnoremap <C-l> <c-w>l
+nnoremap <C-h> <c-w>h
 
 "Archivos de configuracion
 nnoremap <leader>cd :cd %:h <CR>

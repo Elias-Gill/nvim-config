@@ -1,10 +1,11 @@
-require("lsp-colors").setup({
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
 
-})
+--require("lsp-colors").setup({
+  --Error = "#F02020",
+  --Warning = "#FFD500",
+  --Information = "#00A9FF",
+  --Hint = "#00EC89"
+
+--})
 
 require("trouble").setup {
     position = "bottom", -- position of the list can be: bottom, top, left, right
@@ -41,7 +42,7 @@ require("trouble").setup {
     auto_open = false, -- automatically open the list when you have diagnostics
     auto_close = false, -- automatically close the list when you have no diagnostics
     auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
-    auto_fold = false, -- automatically fold a file trouble list at creation
+    auto_fold = true, -- automatically fold a file trouble list at creation
     auto_jump = {"lsp_definitions"}, -- for the given modes, automatically jump if there is only a single result
     signs = {
         -- icons / text used for a diagnostic
