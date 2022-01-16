@@ -36,20 +36,6 @@ colorscheme ghostshell
 let g:gruvbox_contrast_dark='hard'
 
 let g:python_highlight_space_errors=0
-hi Todo guibg=#2BFF75
-hi Todo guifg=#232323
-hi Pmenu guibg=#333333
-hi LspDiagnosticsUnderlineHint guifg=#999999
-
-hi ColorColumn guibg=#444444
-hi MatchParen guibg=grey guifg=white
-"hi Normal guibg=#232323
-"hi TabLineFill guibg=#111111
-
-hi VimWikiLink guifg=#978fff 
-hi StartifyHeader guifg=#ffffff 
-hi StartifySection guifg=#359dc2 
-hi StartifyFile guifg=#FFFFFF 
 
 " native lsp
 set completeopt=menuone,noselect

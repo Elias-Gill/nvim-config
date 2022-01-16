@@ -277,3 +277,24 @@ end
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
 
+hi Todo guibg=#2BFF75
+hi Todo guifg=#232323
+hi Pmenu guibg=#333333
+
+"hi ColorColumn guibg=#444444
+"hi MatchParen guibg=grey guifg=white
+""hi Normal guibg=#232323
+""hi TabLineFill guibg=#111111
+
+" startify colors
+hi VimWikiLink guifg=#978fff 
+hi StartifyHeader guifg=#ffffff 
+hi StartifySection guifg=#359dc2 
+hi StartifyFile guifg=#FFFFFF 
+
+" lsp colors
+hi DiagnosticUnderlineHint guifg=#999999
+hi DiagnosticHint guifg=#00EC89
+hi DiagnosticError guifg=#F02020
+hi DiagnosticWarn guifg=#FFD500
+hi DiagnosticSignHint guifg=#00EC89

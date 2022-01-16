@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged') 
+call plug#begin('~/.config/nvim/plugged') 
 "-----------------------PLUGINS---------------------------------
 
 " Vim navigation through files with a lot of coconut oil

@@ -3,9 +3,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.diagnostic.on_publish_diagnostics,
     {
         virtual_text = {
-            -- prefix = "",
+             --prefix = "",
             prefix = "",
-            spacing = 0
+            spacing = 1
         },
         signs = true,
         underline = true,

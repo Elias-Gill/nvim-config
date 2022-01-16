@@ -1,6 +1,5 @@
 " ocmd BufWinEnter *.* silent loadview"
 let mapleader = " ""json files
-
 nnoremap <leader>ci :call NERDComment('n', 'Append')<cr>
 
 nnoremap ;; A;<esc>
@@ -22,6 +21,7 @@ nnoremap <silent><leader>hu :lua require("harpoon.ui").toggle_quick_menu()<cr>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wf :w!<CR>
 nnoremap <leader>q :q<CR>
+command Q :q
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>tt :wqa<cr>
 nnoremap <leader>wa :wa<cr>
