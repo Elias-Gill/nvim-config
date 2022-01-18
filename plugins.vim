@@ -49,9 +49,9 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'onsails/lspkind-nvim' 
 
 "Plug 'hrsh7th/nvim-compe'
-"Plug 'onsails/lspkind-nvim' 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "File search and tree

@@ -3,52 +3,19 @@ if not present then
 	return
 end
 
---local kind_icons = {
-	--Text = "",
-	--Method = "",
-	--Function = "",
-	--Constructor = "",
-	--Field = "ﰠ",
-	--Variable = "",
-	--Class = "ﴯ",
-	--Interface = "",
-	--Module = "",
-	--Property = "ﰠ",
-	--Unit = "塞",
-	--Value = "",
-	--Enum = "",
-	--Keyword = "",
-	--Snippet = "",
-	--Color = "",
-	--File = "",
-	--Reference = "",
-	--Folder = "",
-	--EnumMember = "",
-	--Constant = "",
-	--Struct = "פּ",
-	--Event = "",
-	--Operator = "",
-	--TypeParameter = "",
---}
-
---local function get_kind(kind_item)
-	--local prsnt, lspkind = pcall(require, "lspkind")
-	--if not prsnt then
-		--return kind_icons
-	--else
-		--return lspkind.presets.default[kind_item]
-	--end
---end
-
 vim.opt.completeopt = "menuone,noselect"
 
 cmp.setup({
+
+    -- snippets 
 	snippet = {
         expand = function(args)
             vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
 	},
-	formatting = {
+
+    -- lsp symbols and decorators for completation
+ 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = string.format("%s", vim_item.kind)
 			vim_item.menu = ({
@@ -62,6 +29,7 @@ cmp.setup({
 			return vim_item
 		end,
 	},
+    -- mappings 
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -71,6 +39,8 @@ cmp.setup({
 			select = true,
 		}),
 	},
+
+    -- sources
 	sources = cmp.config.sources({
 		-- this also affects the order in the completion menu
 		{ name = "ultisnips" },
