@@ -57,6 +57,7 @@ Plug 'glepnir/lspsaga.nvim'
 "File search and tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+"Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Fonts and icons
@@ -66,8 +67,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes and customization
 "Plug 'dracula/vim'
 "Plug 'itchyny/lightline.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'elias-gill/newshell.nvim'
+Plug 'tomasr/molokai'
 Plug 'ray-x/aurora'
 
 " Pareado (){}""'' y ayudas de indentacion
