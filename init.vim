@@ -12,6 +12,7 @@ source ~/.config/nvim/config/NvimTree.vim
 " ----- archivos lua ------
 " buitin lsp
 lua require('elias/lsp/lspsaga') 
+lua require('elias/lsp/lspconfig') 
 lua require('elias/lsp/nvim_cmp') 
 lua require('elias/lsp/diagnostics') 
 lua require('elias/lsp/lsp_servers') 
@@ -32,6 +33,7 @@ command Bw :wa | Bwipeout hidden
 autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
 " Colors
+let g:gruvbox_contrast_dark="soft"
 let g:newshell_transparency=1
 colorscheme newshell
 

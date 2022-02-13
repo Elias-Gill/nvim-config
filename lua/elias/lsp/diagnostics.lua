@@ -1,12 +1,4 @@
 
---require("lsp-colors").setup({
-  --Error = "#F02020",
-  --Warning = "#FFD500",
-  --Information = "#00A9FF",
-  --Hint = "#00EC89"
-
---})
-
 require("trouble").setup {
     position = "bottom", -- position of the list can be: bottom, top, left, right
     height = 10, -- height of the trouble list when position is top or bottom

@@ -19,9 +19,6 @@ nnoremap <silent><leader>hu :lua require("harpoon.ui").toggle_quick_menu()<cr>
 
 "saving files and exit vim
 nnoremap <leader>w :w<CR>
-nnoremap <leader>wf :w!<CR>
-nnoremap <leader>q :q<CR>
-command Q :q
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>tt :wqa<cr>
 nnoremap <leader>wa :wa<cr>
@@ -31,7 +28,7 @@ nnoremap <leader>qf :q!<CR>
 " busqueda de archivos
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :Files ~<CR>
-nnoremap <leader>nt :NvimTreeOpen<CR>
+nnoremap <leader>nt :NvimTreeToggle<CR>
 
 " cicling buffers
 nnoremap <leader>[ :bprevious<CR>
@@ -57,18 +54,20 @@ nnoremap <leader>sb :Bracey<CR>
 
 " Buscar funciones y defin" LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> ga <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent>co <cmd>lua vim.lsp.buf.code_action()<CR>
+"nnoremap <silent>co <cmd>lua vim.lsp.buf.code_action()<CR>
+"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+
 nnoremap <silent><leader>to :TroubleToggle<CR>
 
-
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent>[e :Lspsaga diagnostic_jump_prev<cr>
+nnoremap <silent>]e :Lspsaga diagnostic_jump_next<cr>
+nnoremap <silent>]t :Lspsaga show_line_diagnostics<cr>
+nnoremap <silent>gR :Lspsaga rename<CR>
+nnoremap <silent>co :Lspsaga code_action<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
 
 "cambiar pestanas
 nnoremap <leader>tn :tabnew<cr>

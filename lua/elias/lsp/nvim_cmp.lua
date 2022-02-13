@@ -31,6 +31,7 @@ cmp.setup({
 	},
     -- mappings 
 	mapping = {
+        ['<C-Space>'] = cmp.mapping.complete(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-e>"] = cmp.mapping.close(),
