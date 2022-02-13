@@ -1,12 +1,12 @@
 call plug#begin('~/.config/nvim/plugged') 
 "-----------------------PLUGINS---------------------------------
 
-" Vim navigation through files with a lot of coconut oil
+" Navigation with a lot of coconut oil
 Plug 'nvim-lua/plenary.nvim' " floating windows for nvim
 Plug 'ThePrimeagen/harpoon'
 Plug 'Asheq/close-buffers.vim'
 
-" start page
+" Start page
 Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
@@ -19,7 +19,6 @@ Plug 'szw/vim-maximizer'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
-Plug 'stsewd/fzf-checkout.vim'
 
 " Functions tree
 Plug 'liuchengxu/vista.vim'
