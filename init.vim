@@ -12,6 +12,7 @@ source ~/.config/nvim/config/NvimTree.vim
 " ----- archivos lua ------
 " buitin lsp
 lua require('elias/lsp/lspsaga') 
+lua require('elias/lsp/lspconfig') 
 lua require('elias/lsp/nvim_cmp') 
 lua require('elias/lsp/diagnostics') 
 lua require('elias/lsp/lsp_servers') 
@@ -26,16 +27,15 @@ lua require('elias/treesitter')
 " ----------------------------
 
 command JsonParse :%!python3.9 -m json.tool
-command Bw :Bwipeout hidden
+command Bw :wa | Bwipeout hidden
 
 " Para trabajar con el asqueroso SL pero desde un editor medianamente decente
 autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
-" lsp
-colorscheme ghostshell
-let g:gruvbox_contrast_dark='hard'
-
-let g:python_highlight_space_errors=0
+" Colors
+let g:gruvbox_contrast_dark="soft"
+let g:newshell_transparency=1
+colorscheme newshell
 
 " native lsp
 set completeopt=menuone,noselect
@@ -109,7 +109,6 @@ let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 let g:indentLine_fileType = ['html', 'javascript', 'js', 'python']
 
-
 "lorem
 inoremap lorem Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.
 
@@ -126,6 +125,17 @@ autocmd BufReadPost *.sl set filetype=javascript
 let g:airline_powerline_fonts = 1
 set guifont=terminess-ttf-nerd-font-mono:h11
 
+"LaTeX support
+let g:Tex_GotoError = 0
+"let g:vimtex_complete_bib.match_str_fmt= 1
+
+" NvimTree
+let g:nvim_tree_quit_on_open = 1
+
+" ultisnips
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 
 ""PARA RESALTAR LAS VARIABLES DEBAJO DEL CURSOR
 "setl updatetime=170
@@ -140,10 +150,3 @@ set guifont=terminess-ttf-nerd-font-mono:h11
 "        exe printf('match WordUnderCursor /\V\<%s\>/', escape(cword, '/\'))
 "    endif
 "endfunction
-
-"LaTeX support
-let g:Tex_GotoError = 0
-"let g:vimtex_complete_bib.match_str_fmt= 1
-
-" NvimTree
-let g:nvim_tree_quit_on_open = 1

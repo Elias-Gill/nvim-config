@@ -3,6 +3,7 @@
 "
 " Author: Tomas Restrepo <tomas@winterdom.com>
 " https://github.com/tomasr/molokai
+" mongaso nombre yes if you try to do something like this 
 "
 " Note: Based on the Monokai theme for TextMate
 " by Wimer Hazenberg and its darker variant
@@ -275,16 +276,18 @@ end
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+
+" ------------- MY CONFIGURATIONS ------------
 set background=dark
 
 hi Todo guibg=#2BFF75
 hi Todo guifg=#232323
 hi Pmenu guibg=#333333
+hi MatchParen guibg=grey guifg=white
 
+hi Normal guibg=NONE
 "hi ColorColumn guibg=#444444
-"hi MatchParen guibg=grey guifg=white
-""hi Normal guibg=#232323
-""hi TabLineFill guibg=#111111
+"hi TabLineFill guibg=#111111
 
 " startify colors
 hi VimWikiLink guifg=#978fff 
