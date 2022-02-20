@@ -2,11 +2,10 @@
 set termguicolors
 
 " ----- archivos vimL -----
-source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/config/remaps.vim
-source ~/.config/nvim/config/startify.vim
-source ~/.config/nvim/config/NvimTree.vim
-"source ~/.config/nvim/config/ligthline.vim
+source ~/AppData/Local/nvim/plugins.vim
+source ~/AppData/Local/nvim/config/remaps.vim
+source ~/AppData/Local/nvim/config/startify.vim
+source ~/AppData/Local/nvim/config/NvimTree.vim
 
 
 " ----- archivos lua ------

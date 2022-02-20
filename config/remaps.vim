@@ -99,8 +99,8 @@ nnoremap <C-h> <c-w>h
 nnoremap <leader>cd :cd %:h <CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>SO :tabnew $MYVIMRC<CR>
-nnoremap <leader>sm :e ~/.config/nvim/config/remaps.vim<CR>
-nnoremap <leader>sp :e ~/.config/nvim/plugins.vim<CR>
+nnoremap <leader>sm :e ~/AppData/Local/nvim/config/remaps.vim<CR>
+nnoremap <leader>sp :e ~/AppData/Local/nvim/plugins.vim<CR>
 
 " function tree
 nnoremap <leader>vf :Vista nvim_lsp <CR>
