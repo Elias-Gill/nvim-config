@@ -59,6 +59,7 @@ basic.lsp_diagnos = {
         return ''
     end,
 }
+
 basic.file = {
     name = 'file',
     hl_colors = {
@@ -87,6 +88,7 @@ basic.file = {
         end
     end,
 }
+
 basic.file_right = {
     hl_colors = {
         default = hl_list.Black,
@@ -177,6 +179,31 @@ basic.lsp_name = {
     end,
 }
 
+basic.file_inactive = {
+    name = 'file',
+    hl_colors = {
+        default = hl_list.Black,
+        white = { 'white', 'black' },
+        magenta = { 'magenta', 'black' },
+    },
+    text = function(_, _, width)
+        if width > breakpoint_width then
+            return {
+                { ' ', '' },
+                { b_components.cache_file_name('[No Name]', 'unique'), 'magenta' },
+                { ' ', '' },
+            }
+        else
+            return {
+                { b_components.cache_file_size(), 'default' },
+                { ' ', '' },
+                { b_components.cache_file_name('[No Name]', 'unique'), 'magenta' },
+                { ' ', '' },
+            }
+        end
+    end,
+}
+
 local default = {
     filetypes = { 'default' },
     active = {
@@ -195,9 +222,9 @@ local default = {
         basic.square_mode,
     },
     inactive = {
-        { b_components.full_file_name, hl_list.Inactive },
-        basic.file_name_inactive,
-        --basic.divider,
+        basic.lsp_name,
+        basic.divider,
+        basic.file_inactive,
         basic.divider,
         { b_components.line_col, hl_list.Inactive },
         { b_components.progress, hl_list.Inactive },
