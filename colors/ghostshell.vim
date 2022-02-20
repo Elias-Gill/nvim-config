@@ -1,303 +1,824 @@
-" ON THE END OF THE FILE WHERE MY PERSONAL CONFIGURATION
-" Vim color file
-"
-" Author: Tomas Restrepo <tomas@winterdom.com>
-" https://github.com/tomasr/molokai
-" mongaso nombre yes if you try to do something like this 
-"
-" Note: Based on the Monokai theme for TextMate
-" by Wimer Hazenberg and its darker variant
-" by Hamish Stuart Macpherson
-hi clear
-"
+" File: ghostshell.vim
+" Description: Scheme for Vim based on Ghost in the Shell series
+" Author: linhusp <linh0ltv@gmail.com>
+" Source: https://github.com/linusp/vim-ghostshell
+" Last Modified: 1 Jan 2020
+" -----------------------------------------------------------------------------
+" Note: toi lam cai nay chi de cho vui :)
 
+" Initialization: {{{
 if version > 580
-    " no guarantees for version 5.8 and below, but this makes it stop
-    " complaining
     hi clear
-    if exists("syntax_on")
+    if exists('syntax_on')
         syntax reset
     endif
 endif
-let g:colors_name="molokai"
 
-if exists("g:molokai_original")
-    let s:molokai_original = g:molokai_original
-else
-    let s:molokai_original = 0
+let g:colors_name='ghostshell'
+
+if !(has('termguicolors') && &termguicolors) 
+    \ && !has('gui_running') && &t_Co != 256
+    finish
 endif
 
-hi pythonSpaceError guibg=#232323
-hi Boolean         guifg=#AE81FF
-hi Character       guifg=#E6DB74
-hi Number          guifg=#AE81FF
-hi String          guifg=#E6DB74
-hi Conditional     guifg=#F92672               gui=bold
-hi Constant        guifg=#AE81FF               gui=bold
-hi Cursor          guifg=#000000 guibg=#F8F8F0
-hi iCursor         guifg=#000000 guibg=#F8F8F0
-hi Debug           guifg=#BCA3A3               gui=bold
-hi Define          guifg=#66D9EF
-hi Delimiter       guifg=#8F8F8F
-hi DiffAdd                       guibg=#13354A
-hi DiffChange      guifg=#89807D guibg=#4C4745
-hi DiffDelete      guifg=#960050 guibg=#1E0010
-hi DiffText                      guibg=#4C4745 gui=italic,bold
+" }}}
+" Global: {{{
 
-hi Directory       guifg=#A6E22E               gui=bold
-hi Error           guifg=#E6DB74 guibg=#1E0010
-hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
-hi Exception       guifg=#A6E22E               gui=bold
-hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=#000000
-hi Folded          guifg=#465457 guibg=#000000
-hi Function        guifg=#A6E22E
-hi Identifier      guifg=#FD971F
-hi Ignore          guifg=#808080 guibg=bg
-hi IncSearch       guifg=#C4BE89 guibg=#000000
-
-hi Keyword         guifg=#F92672               gui=bold
-hi Label           guifg=#E6DB74               gui=none
-hi Macro           guifg=#C4BE89               gui=italic
-hi SpecialKey      guifg=#66D9EF               gui=italic
-
-hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
-hi ModeMsg         guifg=#E6DB74
-hi MoreMsg         guifg=#E6DB74
-hi Operator        guifg=#F92672
-
-" complete menu
-hi Pmenu           guifg=#66D9EF guibg=#000000
-hi PmenuSel                      guibg=#808080
-hi PmenuSbar                     guibg=#080808
-hi PmenuThumb      guifg=#66D9EF
-
-hi PreCondit       guifg=#A6E22E               gui=bold
-hi PreProc         guifg=#A6E22E
-hi Question        guifg=#66D9EF
-hi Repeat          guifg=#F92672               gui=bold
-hi Search          guifg=#000000 guibg=#FFE792
-" marks
-hi SignColumn      guifg=#A6E22E guibg=#232526
-hi SpecialChar     guifg=#F92672               gui=bold
-hi SpecialComment  guifg=#7E8E91               gui=bold
-hi Special         guifg=#66D9EF guibg=bg      gui=italic
-if has("spell")
-    hi SpellBad    guisp=#FF0000 gui=undercurl
-    hi SpellCap    guisp=#7070F0 gui=undercurl
-    hi SpellLocal  guisp=#70F0F0 gui=undercurl
-    hi SpellRare   guisp=#FFFFFF gui=undercurl
+if !exists('g:ghostshell_bold')
+    let g:ghostshell_bold=1
 endif
-hi Statement       guifg=#F92672               gui=bold
-hi StatusLine      guifg=#455354 guibg=fg
-hi StatusLineNC    guifg=#808080 guibg=#080808
-hi StorageClass    guifg=#FD971F               gui=italic
-hi Structure       guifg=#66D9EF
-hi Tag             guifg=#F92672               gui=italic
-hi Title           guifg=#ef5939
-hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
-hi Typedef         guifg=#66D9EF
-hi Type            guifg=#66D9EF               gui=none
-hi Underlined      guifg=#808080               gui=underline
+if !exists('g:ghostshell_italic')
+    if has('gui_running') || $TERM_ITALICS == 'true'
+        let g:ghostshell_italic=1
+    else
+        let g:ghostshell_italic=0
+    endif
+endif
 
-hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
-hi VisualNOS                     guibg=#403D3D
-hi Visual                        guibg=#403D3D
-hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
-hi WildMenu        guifg=#66D9EF guibg=#000000
+if !exists('g:ghostshell_undercurl')
+    let g:ghostshell_undercurl=1
+endif
 
-hi TabLineFill     guifg=#1B1D1E guibg=#1B1D1E 
-hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none
-hi Tab guibg=#111111
+if !exists('g:ghostshell_underline')
+    let g:ghostshell_underline=1
+endif
 
-if s:molokai_original == 1
-   hi Normal          guifg=#F8F8F2 guibg=#272822
-   hi Comment         guifg=#75715E
-   hi CursorLine                    guibg=#3E3D32
-   hi CursorLineNr    guifg=#FD971F               gui=none
-   hi CursorColumn                  guibg=#3E3D32
-   hi ColorColumn                   guibg=#3B3A32
-   hi LineNr          guifg=#BCBCBC guibg=#3B3A32
-   hi NonText         guifg=#75715E
-   hi SpecialKey      guifg=#75715E
+if !exists('g:ghostshell_inverse')
+    let g:ghostshell_inverse=1
+endif
+
+if !exists('g:ghostshell_guisp_fallback')
+    \ || index(['fg', 'bg'], g:ghostshell_guisp_fallback) == -1
+    let g:ghostshell_guisp_fallback='NONE'
+endif
+
+if !exists('g:ghostshell_improved_strings')
+    let g:ghostshell_improved_strings=0
+endif
+
+if !exists('g:ghostshell_improved_warnings')
+    let g:ghostshell_improved_warnings=0
+endif
+
+if !exists('g:ghostshell_termcolors')
+    let g:ghostshell_termcolors=256
+endif
+
+if !exists('g:ghostshell_invert_indent_guides')
+    let g:ghostshell_invert_indent_guides=0
+endif
+
+let s:is_dark=(&background == 'dark')
+
+" }}}
+" Palette: {{{
+" setup palette dictionary
+let s:gs={}
+
+let s:gs.dark0          = ['#282828', 235]
+" let s:gs.dark0          = ['#272721', 235]
+let s:gs.dark1          = ['#3c3836', 237]
+let s:gs.dark2          = ['#504945', 239]
+let s:gs.dark3          = ['#665c54', 241]
+let s:gs.dark4          = ['#7c6f64', 243]
+let s:gs.dark4_256      = ['#7c6f64', 243]
+
+let s:gs.gray_244       = ['#928374', 244]
+let s:gs.gray_245       = ['#928374', 245]
+
+let s:gs.light0         = ['#ede4cf', 253]
+let s:gs.light1         = ['#d5cfc0', 252]
+let s:gs.light2         = ['#d0c2a1', 251]
+let s:gs.light3         = ['#bdae93', 250]
+let s:gs.light4         = ['#a89984', 248]
+let s:gs.light4_256     = ['#a89984', 248]
+
+let s:gs.neutral_red    = ['#cd4652', 160]
+let s:gs.neutral_orange = ['#d79d85', 173]
+let s:gs.neutral_yellow = ['#edaf88', 216]
+let s:gs.neutral_green  = ['#4ec9b0', 79]
+let s:gs.neutral_aqua   = ['#99d4e1', 116]
+let s:gs.neutral_blue   = ['#569cd6', 67]
+let s:gs.neutral_purple = ['#cba0c1', 139]
+
+" }}}
+" Emphasis: {{{
+let s:bold='bold,'
+if g:ghostshell_bold == 0
+    let s:bold=''
+endif
+
+let s:italic='italic,'
+if g:ghostshell_italic == 0
+    let s:italic=''
+endif
+
+let s:underline='underline,'
+if g:ghostshell_underline == 0
+    let s:underline=''
+endif
+
+let s:undercurl='undercurl,'
+if g:ghostshell_undercurl == 0
+    let s:undercurl=''
+endif
+
+let s:inverse='inverse,'
+if g:ghostshell_inverse == 0
+    let s:inverse=''
+endif
+
+" }}}
+" Colors: {{{
+let s:bg=['bg', 'bg']
+let s:fg=['fg', 'fg']
+let s:none=['NONE', 'NONE']
+
+if s:is_dark
+    let s:bg0=s:gs.dark0
+    let s:bg1=s:gs.dark1
+    let s:bg2=s:gs.dark2
+    let s:bg3=s:gs.dark3
+    let s:bg4=s:gs.dark4
+
+    let s:gray=s:gs.gray_245
+
+    let s:fg0=s:gs.light0
+    let s:fg1=s:gs.light1
+    let s:fg2=s:gs.light2
+    let s:fg3=s:gs.light3
+    let s:fg4=s:gs.light4
+    let s:fg4_256=s:gs.light4_256
+
+    let s:red=s:gs.neutral_red
+    let s:green=s:gs.neutral_green
+    let s:yellow=s:gs.neutral_yellow
+    let s:blue=s:gs.neutral_blue
+    let s:purple=s:gs.neutral_purple
+    let s:aqua=s:gs.neutral_aqua
+    let s:orange=s:gs.neutral_orange
+endif
+
+" support 16 colors
+if g:ghostshell_termcolors == 16
+    let s:bg0[1] = 0
+    let s:fg4[1] = 7
+    let s:gray[1] = 8
+    let s:red[1] = 9
+    let s:green[1] = 10
+    let s:yellow[1] = 11
+    let s:blue[1] = 12
+    let s:purple[1] = 13
+    let s:aqua[1] = 14
+    let s:fg1[1] = 15
+endif
+
+" save current colors to the palette
+let s:gs.bg0=s:bg0
+let s:gs.bg1=s:bg1
+let s:gs.bg2=s:bg2
+let s:gs.bg3=s:bg3
+let s:gs.bg4=s:bg4
+
+let s:gs.gray=s:gray
+
+let s:gs.fg0=s:fg0
+let s:gs.fg1=s:fg1
+let s:gs.fg2=s:fg2
+let s:gs.fg3=s:fg3
+let s:gs.fg4=s:fg4
+let s:gs.fg4_256=s:fg4_256
+
+let s:gs.red=s:red
+let s:gs.green=s:green
+let s:gs.yellow=s:yellow
+let s:gs.blue=s:blue
+let s:gs.purple=s:purple
+let s:gs.aqua=s:aqua
+let s:gs.orange=s:orange
+
+" }}}
+" Nvim Colors: {{{
+if has('nvim')
+    let g:termnial_color_0=s:bg0[0]
+    let g:termnial_color_8=s:gray[0]
+
+    let g:termnial_color_1=s:gs.neutral_red[0]
+    let g:termnial_color_9=s:red[0]
+
+    let g:termnial_color_2=s:gs.neutral_green[0]
+    let g:termnial_color_10=s:green[0]
+
+    let g:termnial_color_3=s:gs.neutral_yellow[0]
+    let g:termnial_color_11=s:yellow[0]
+
+    let g:termnial_color_4=s:gs.neutral_blue[0]
+    let g:termnial_color_12=s:blue[0]
+
+    let g:termnial_color_5=s:gs.neutral_purple[0]
+    let g:termnial_color_13=s:purple[0]
+
+    let g:termnial_color_6=s:gs.neutral_aqua[0]
+    let g:termnial_color_14=s:aqua[0]
+
+    let g:termnial_color_7=s:fg4[0]
+    let g:termnial_color_15=s:fg1[0]
+endif
+
+" }}}
+" Overload: {{{
+let s:hls_cursor=s:orange
+if exists('g:ghostshell_hls_cursor')
+    let s:hls_cursor=get(s:gs, g:ghostshell_hls_cursor)
+endif
+
+let s:number_column=s:none
+if exists('g:ghostshell_number_column')
+    let s:number_column=get(s:gs, g:ghostshell_number_column)
+endif
+
+let s:sign_column=s:none
+
+if exists('g:gitgutter_override_sign_column_highlight')
+        \ && g:gitgutter_override_sign_column_highlight == 1
+    let s:sign_column=s:number_column
 else
-   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
-   hi Comment         guifg=#7E8E91
-   hi CursorLine                    guibg=#293739
-   hi CursorLineNr    guifg=#FD971F               gui=none
-   hi CursorColumn                  guibg=#293739
-   hi ColorColumn                   guibg=#232526
-   hi LineNr          guifg=#465457 guibg=#232526
-   hi NonText         guifg=#465457
-   hi SpecialKey      guifg=#465457
-end
+    let g:gitgutter_override_sign_column_highlight=0
+    if exists('g:ghostshell_sign_column')
+        let s:sign_column=get(s:gs, g:ghostshell_sign_column)
+    elseif exists('g:ghostshell_enable_sign_column')
+        \ && g:ghostshell_enable_sign_column == 1
+        let s:sign_column=s:bg1
+    endif
+endif
 
-"
-" Support for 256-color terminal
-"
-if &t_Co > 255
-   if s:molokai_original == 1
-      hi Normal                   ctermbg=234
-      hi CursorLine               ctermbg=235   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
-   else
-      hi Normal       ctermfg=252 ctermbg=233
-      hi CursorLine               ctermbg=234   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
-   endif
-   hi Boolean         ctermfg=135
-   hi Character       ctermfg=144
-   hi Number          ctermfg=135
-   hi String          ctermfg=144
-   hi Conditional     ctermfg=161               cterm=bold
-   hi Constant        ctermfg=135               cterm=bold
-   hi Cursor          ctermfg=16  ctermbg=253
-   hi Debug           ctermfg=225               cterm=bold
-   hi Define          ctermfg=81
-   hi Delimiter       ctermfg=241
+let s:color_column=s:bg1
+if exists('g:ghostshell_color_column')
+    let s:color_column=get(s:gs, g:ghostshell_color_column)
+endif
 
-   hi DiffAdd                     ctermbg=24
-   hi DiffChange      ctermfg=181 ctermbg=239
-   hi DiffDelete      ctermfg=162 ctermbg=53
-   hi DiffText                    ctermbg=102 cterm=bold
+let s:vert_split=s:bg0
+if exists('g:ghostshell_vert_split')
+    let s:vert_split=get(s:gs, g:ghostshell_vert_split)
+endif
 
-   hi Directory       ctermfg=118               cterm=bold
-   hi Error           ctermfg=219 ctermbg=89
-   hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
-   hi Exception       ctermfg=118               cterm=bold
-   hi Float           ctermfg=135
-   hi FoldColumn      ctermfg=67  ctermbg=16
-   hi Folded          ctermfg=67  ctermbg=16
-   hi Function        ctermfg=118
-   hi Identifier      ctermfg=208               cterm=none
-   hi Ignore          ctermfg=244 ctermbg=232
-   hi IncSearch       ctermfg=193 ctermbg=16
+let s:invert_signs=''
+if exists('g:ghostshell_invert_signs')
+    if g:ghostshell_invert_signs == 1
+        let s:invert_signs=s:inverse
+    endif
+endif
 
-   hi keyword         ctermfg=161               cterm=bold
-   hi Label           ctermfg=229               cterm=none
-   hi Macro           ctermfg=193
-   hi SpecialKey      ctermfg=81
+let s:invert_selection=s:inverse
+if exists('g:ghostshell_invert_selection')
+    if g:ghostshell_invert_selection == 0
+        let s:invert_selection=''
+    endif
+endif
 
-   hi MatchParen      ctermfg=233  ctermbg=208 cterm=bold
-   hi ModeMsg         ctermfg=229
-   hi MoreMsg         ctermfg=229
-   hi Operator        ctermfg=161
+let s:invert_tabline=''
+if exists('g:ghostshell_invert_tabline')
+    if g:ghostshell_invert_tabline == 1
+        let s:invert_tabline=s:inverse
+    endif
+endif
 
-   " complete menu
-   hi Pmenu           ctermfg=81  ctermbg=16
-   hi PmenuSel        ctermfg=255 ctermbg=242
-   hi PmenuSbar                   ctermbg=232
-   hi PmenuThumb      ctermfg=81
+let s:italicize_comments=s:italic
+if exists('g:ghostshell_italicize_comments')
+    if g:ghostshell_italicize_comments == 0
+        let s:italicize_comments=''
+    endif
+endif
 
-   hi PreCondit       ctermfg=118               cterm=bold
-   hi PreProc         ctermfg=118
-   hi Question        ctermfg=81
-   hi Repeat          ctermfg=161               cterm=bold
-   hi Search          ctermfg=0   ctermbg=222   cterm=NONE
+let s:italicize_strings=''
+if exists('g:ghostshell_italicize_strings')
+    if g:ghostshell_italicize_strings == 1
+        let s:italicize_strings=s:italic
+    endif
+endif
 
-   " marks column
-   hi SignColumn      ctermfg=118 ctermbg=235
-   hi SpecialChar     ctermfg=161               cterm=bold
-   hi SpecialComment  ctermfg=245               cterm=bold
-   hi Special         ctermfg=81
-   if has("spell")
-       hi SpellBad                ctermbg=52
-       hi SpellCap                ctermbg=17
-       hi SpellLocal              ctermbg=17
-       hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
-   endif
-   hi Statement       ctermfg=161               cterm=bold
-   hi StatusLine      ctermfg=238 ctermbg=253
-   hi StatusLineNC    ctermfg=244 ctermbg=232
-   hi StorageClass    ctermfg=208
-   hi Structure       ctermfg=81
-   hi Tag             ctermfg=161
-   hi Title           ctermfg=166
-   hi Todo            ctermfg=231 ctermbg=232   cterm=bold
+" }}}
+" Highlighting Function: {{{
+function! s:HL(group, fg, ...)
+    " Arguments: group, guifg, guibg, gui, guisp
 
-   hi Typedef         ctermfg=81
-   hi Type            ctermfg=81                cterm=none
-   hi Underlined      ctermfg=244               cterm=underline
+    " foreground
+    let fg=a:fg
 
-   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
-   hi VisualNOS                   ctermbg=238
-   hi Visual                      ctermbg=235
-   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
-   hi WildMenu        ctermfg=81  ctermbg=16
+    " background
+    if a:0 >= 1
+        let bg=s:none
+    else
+        let bg=s:none
+    endif
 
-   hi Comment         ctermfg=59
-   hi CursorColumn                ctermbg=236
-   hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=250 ctermbg=236
-   hi NonText         ctermfg=59
+    " emphasis
+    if a:0 >= 2 && strlen(a:2)
+        let emstr=a:2
+    else
+        let emstr='NONE,'
+    endif
 
-   hi SpecialKey      ctermfg=59
+    " special fallback
+    if a:0 >= 3
+        if g:ghostshell_guisp_fallback != 'NONE'
+            let fg=a:3
+        endif
 
-   if exists("g:rehash256") && g:rehash256 == 1
-       hi Normal       ctermfg=252 ctermbg=234
-       hi CursorLine               ctermbg=236   cterm=none
-       hi CursorLineNr ctermfg=208               cterm=none
+        " bg fallback mode shold invert highlighting
+        if g:ghostshell_guisp_fallback == 'bg'
+            let emstr .= 'inverse,'
+        endif
+    endif
 
-       hi Boolean         ctermfg=141
-       hi Character       ctermfg=222
-       hi Number          ctermfg=141
-       hi String          ctermfg=222
-       hi Conditional     ctermfg=197               cterm=bold
-       hi Constant        ctermfg=141               cterm=bold
+    let histring = [ 'hi', a:group,
+        \ 'guifg=' . fg[0], 'ctermfg=' . fg[1],
+        \ 'guibg=' . bg[0], 'ctermbg=' . bg[1],
+        \ 'gui=' . emstr[:-2], 'cterm=' . emstr[:-2]
+        \ ]
 
-       hi DiffDelete      ctermfg=125 ctermbg=233
+    " special
+    if a:0 >= 3
+        call add(histring, 'guisp=' . a:3[0])
+    endif
 
-       hi Directory       ctermfg=154               cterm=bold
-       hi Error           ctermfg=222 ctermbg=233
-       hi Exception       ctermfg=154               cterm=bold
-       hi Float           ctermfg=141
-       hi Function        ctermfg=154
-       hi Identifier      ctermfg=208
+    execute join(histring, ' ')
+endfunction
 
-       hi Keyword         ctermfg=197               cterm=bold
-       hi Operator        ctermfg=197
-       hi PreCondit       ctermfg=154               cterm=bold
-       hi PreProc         ctermfg=154
-       hi Repeat          ctermfg=197               cterm=bold
+" }}}
+" Highlight Groups: {{{
+" common highlight groups
+call s:HL('GhostshellFg0', s:fg0)
+call s:HL('GhostshellFg1', s:fg1)
+call s:HL('GhostshellFg2', s:fg2)
+call s:HL('GhostshellFg3', s:fg3)
+call s:HL('GhostshellFg4', s:fg4)
+call s:HL('GhostshellGray', s:gray)
+call s:HL('GhostshellBg0', s:bg0)
+call s:HL('GhostshellBg1', s:bg1)
+call s:HL('GhostshellBg2', s:bg2)
+call s:HL('GhostshellBg3', s:bg3)
+call s:HL('GhostshellBg4', s:bg4)
 
-       hi Statement       ctermfg=197               cterm=bold
-       hi Tag             ctermfg=197
-       hi Title           ctermfg=203
-       hi Visual                      ctermbg=238
+call s:HL('GhostshellRed', s:red)
+call s:HL('GhostshellRedBold', s:red, s:none, s:bold)
+call s:HL('GhostshellGreen', s:green)
+call s:HL('GhostshellGreenBold', s:green, s:none, s:bold)
+call s:HL('GhostshellYellow', s:yellow)
+call s:HL('GhostshellYellowBold', s:yellow, s:none, s:bold)
+call s:HL('GhostshellBlue', s:blue)
+call s:HL('GhostshellBlueBold', s:blue, s:none, s:bold)
+call s:HL('GhostshellPurple', s:purple)
+call s:HL('GhostshellPurpleBold', s:purple, s:none, s:bold)
+call s:HL('GhostshellAqua', s:aqua)
+call s:HL('GhostshellAquaBold', s:aqua, s:none, s:bold)
+call s:HL('GhostshellOrange', s:orange)
+call s:HL('GhostshellOrangeBold', s:orange, s:none, s:bold)
 
-       hi Comment         ctermfg=244
-       hi LineNr          ctermfg=239 ctermbg=235
-       hi NonText         ctermfg=239
-       hi SpecialKey      ctermfg=239
-   endif
-end
+call s:HL('GhostshellRedSign', s:red, s:sign_column, s:invert_signs)
+call s:HL('GhostshellGreenSign', s:green, s:sign_column, s:invert_signs)
+call s:HL('GhostshellBlueSign', s:yellow, s:sign_column, s:invert_signs)
+call s:HL('GhostshellYellowSign', s:blue, s:sign_column, s:invert_signs)
+call s:HL('GhostshellPurpleSign', s:purple, s:sign_column, s:invert_signs)
+call s:HL('GhostshellAquaSign', s:aqua, s:sign_column, s:invert_signs)
 
+" }}}
 
-" Must be at the end, because of ctermbg=234 bug.
-" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+" Colorscheme:
+" -----------------------------------------------------------------------------
+" UI: {{{
+" Text
+call s:HL('Normal', s:fg1, s:bg0)
 
-" ------------- MY CONFIGURATIONS ------------
-set background=dark
+if s:is_dark
+    set background=dark
+endif
 
-hi Todo guibg=#2BFF75
-hi Todo guifg=#232323
-hi Pmenu guibg=#333333
-hi MatchParen guibg=grey guifg=white
+if version >= 700
+    " Screen line that the cursor is
+    call s:HL('CursorLine', s:none, s:bg1)
+    " Screen column that the cursor is
+    hi! link CursorColumn CursorLine
 
-hi Normal guibg=NONE
-"hi ColorColumn guibg=#444444
-"hi TabLineFill guibg=#111111
+    " Tab pages line filter
+    call s:HL('TabLineFill', s:bg4, s:bg1, s:invert_tabline)
+    " Active tab page label
+    call s:HL('TabLineSel', s:fg2, s:bg, s:invert_tabline)
+    " Not active tab page label
+    hi! link TabLine TabLineFill
 
-" startify colors
-hi VimWikiLink guifg=#978fff 
-hi StartifyHeader guifg=#ffffff 
-hi StartifySection guifg=#359dc2 
-hi StartifyFile guifg=#FFFFFF 
+    " Match paired bracket under the cursor
+    call s:HL('MatchParen', s:yellow, s:none, s:bold . s:underline)
+endif
 
-" lsp colors
-hi DiagnosticUnderlineHint guifg=#999999
-hi DiagnosticHint guifg=#00EC89
-hi DiagnosticError guifg=#F02020
-hi DiagnosticWarn guifg=#FFD500
-hi DiagnosticSignHint guifg=#00EC89
+if version >= 703
+    " Highlight screen column
+    call s:HL('ColorColumn', s:none, s:color_column)
+
+    " Conceal \lambda
+    call s:HL('Conceal', s:blue, s:none)
+
+    " Line number of CursorLine
+    call s:HL('CursorLineNr', s:fg1, s:bg1)
+endif
+
+hi! link NonText GhostshellBg2
+hi! link SpecialKey GhostshellBg2
+
+call s:HL('Visual', s:none, s:bg3, s:invert_selection)
+hi! link VisualNOS Visual
+
+call s:HL('Search', s:yellow, s:bg0, s:inverse)
+call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
+
+call s:HL('Underlined', s:blue, s:none, s:underline)
+
+call s:HL('StatusLine', s:bg1, s:fg1, s:inverse)
+call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
+
+call s:HL('VertSplit', s:bg3, s:vert_split)
+
+" Current match in completion
+call s:HL('WildMenu', s:blue, s:bg2, s:bold)
+
+" Directory names, special names
+hi! link Directory GhostshellGreenBold
+
+" Output from :set all, :autocmd,...
+call s:HL('Title', s:fg2, s:none, s:bold)
+
+" Messages
+call s:HL('ErrorMsg', s:bg0, s:red, s:bold)
+" -- More --
+hi! link MoreMsg GhostshellYellowBold
+" Current mode
+hi! link ModeMsg GhostshellYellowBold
+" 'Press enter' prompt
+hi! link Question GhostshellOrangeBold
+" Warning
+hi! link WarningMsg GhostshellRedBold
+
+" }}}
+" Gutter: {{{
+" For :number and :#
+call s:HL('LineNr', s:bg4, s:number_column)
+
+call s:HL('SignColumn', s:none, s:sign_column)
+
+" Closed folds
+call s:HL('Folded', s:gray, s:bg1, s:italic)
+" Displayed folds
+call s:HL('FoldColumn', s:gray, s:bg1)
+
+" }}}
+" Cursor: {{{
+" Normal mode cursor
+call s:HL('Cursor', s:none, s:none, s:inverse)
+" Visual mode cursor
+hi! link vCursor Cursor
+" Input mode cursor
+call s:HL('iCursor', s:bg0, s:fg1)
+" Language mapping
+hi! link lCursor Cursor
+
+" }}}
+" Syntax: {{{
+hi! link Special GhostshellFg3
+
+call s:HL('Comment', s:gray, s:none, s:italicize_comments)
+call s:HL('Todo', s:fg, s:none, s:bold)
+call s:HL('Error', s:red, s:bg, s:bold . s:inverse)
+
+" Generic statement
+hi! link Statement GhostshellBlue
+" if, else,...
+hi! link Conditional GhostshellBlue
+" for, while,...
+hi! link Repeat GhostshellBlue
+" case, default,...
+hi! link Label GhostshellBlue
+" try, catch,...
+hi! link Exception GhostshellYellow
+" sizeof, '*', '+',...
+hi! link Operator GhostshellBlue
+" other
+hi! link Keyword GhostshellBlue
+
+hi! link Identifier GhostshellAqua
+
+hi! link Function GhostshellPurple
+
+" Preprocessor
+hi! link PreProc GhostshellYellow
+" #include,...
+hi! link Include GhostshellGray
+" #define,...
+hi! link Define GhostshellGray
+hi! link Macro GhostshellGray
+" #if, #else,...
+hi! link PreCondit GhostshellAqua
+
+" Constant
+hi! link Constant GhostshellYellow
+hi! link Character GhostshellYellow
+" hi! link SpecialChar GhostshellBlue
+if g:ghostshell_improved_strings == 0
+    call s:HL('String', s:orange, s:none, s:italicize_strings)
+else
+    call s:HL('String', s:fg1, s:none, s:italicize_strings)
+endif
+hi! link Boolean GhostshellBlue
+" hi! link Number GhostshellGreen
+hi! link Number GhostshellFg3
+hi! link Float Number
+
+" Type
+hi! link Type GhostshellAqua
+" static,...
+hi! link StorageClass GhostshellYellow
+" struct, enum,...
+hi! link Structure GhostshellYellow
+" typedef
+hi! link Typedef GhostshellBlue
+
+" Paren
+" hi! link Delimiter Special
+hi! link Delimiter GhostshellFg1
+
+" }}}
+" Completion Menu: {{{
+" Popup menu normal
+call s:HL('Pmenu', s:fg1, s:bg2)
+" Popup menu selected
+call s:HL('PmenuSel', s:bg2, s:fg2, s:bold)
+" Scrollbar
+call s:HL('PmenuSbar', s:none, s:bg2)
+" Scrollbar thumb
+call s:HL('PmenuThumb', s:none, s:bg4)
+
+" }}}
+" Diff: {{{
+call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
+call s:HL('DiffAdd', s:green, s:bg0, s:inverse)
+call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
+call s:HL('DiffText', s:yellow, s:bg0, s:inverse)
+
+" }}}
+" Spelling: {{{
+if has('spell')
+    " Compile warning
+    if g:ghostshell_improved_warnings == 0
+        call s:HL('SpellCap', s:none, s:none, s:undercurl, s:red)
+    else
+        call s:HL('SpellCap', s:green, s:none, s:bold . s:italic)
+    endif
+    " Not recognized word
+    call s:HL('SpellBad', s:none, s:none, s:undercurl, s:blue)
+    " Wrong spelling for selected region
+    call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:aqua)
+    " Rare word
+    call s:HL('SpellRare', s:none, s:none, s:undercurl, s:purple)
+endif
+
+" }}}
+" Tab: {{{
+call s:HL('TAB', s:none, s:bg1)
+
+" }}}
+
+" Plugin:
+" -----------------------------------------------------------------------------
+" GitGutter: {{{
+hi! link GitGutterAdd GhostshellGreenSign
+hi! link GitGutterChange GhostshellAquaSign
+hi! link GitGutterDelete GhostshellRedSign
+hi! link GitGutterChangeDelete GhostshellAquaSign
+
+" }}}
+" NERDTree: {{{
+hi! link NERDTreeDir GhostshellAqua
+hi! link NERDTreeDirSlash GhostshellGray
+
+hi! link NERDTreeOpenable GhostshellGray
+hi! link NERDTreeClosable GhostshellGray
+
+hi! link NERDTreeFile GhostshellFg1
+hi! link NERDTreeExecFile GhostshellGreen
+
+hi! link NERDTreeUp GhostshellGray
+hi! link NERDTreeCWD GhostshellPurple
+hi! link NERDTreeHelp GhostshellOrange
+
+hi! link NERDTreeToggleOn GhostshellGreen
+hi! link NERDTreeToggleOff GhostshellRed
+
+" }}}
+" Lightline: {{{
+function! s:getColor(group)
+    let guiColor=synIDattr(hlID(a:group), "fg", "gui")
+    let termColor=synIDattr(hlID(a:group), "fg", "cterm")
+    return [guiColor, termColor]
+endfunction
+
+if exists('g:lightline')
+    let s:bg0    = s:getColor('GhostshellBg0')
+    let s:bg1    = s:getColor('GhostshellBg1')
+    let s:bg2    = s:getColor('GhostshellBg2')
+    let s:bg4    = s:getColor('GhostshellBg4')
+    let s:fg1    = s:getColor('GhostshellFg1')
+    let s:fg4    = s:getColor('GhostshellFg4')
+
+    let s:red    = s:getColor('GhostshellRed')
+    let s:yellow = s:getColor('GhostshellYellow')
+    let s:aqua   = s:getColor('GhostshellAqua')
+    let s:orange = s:getColor('GhostshellOrange')
+    let s:green  = s:getColor('GhostshellGreen')
+
+    let s:p={
+        \ 'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 
+        \ 'visual':{}, 'tabline':{}, 'terminal':{}
+        \ }
+    let s:p.normal.left     = [[s:bg0, s:fg4, 'bold'], [s:fg4, s:bg2]]
+    let s:p.normal.right    = [[s:bg0, s:fg4], [s:fg4, s:bg2]]
+    let s:p.normal.middle   = [[s:fg4, s:bg1]]
+    let s:p.inactive.right  = [[s:bg4, s:bg1], [s:bg4, s:bg1]]
+    let s:p.inactive.left   = [[s:bg4, s:bg1], [s:bg4, s:bg1]]
+    let s:p.inactive.middle = [[s:bg4, s:bg1]]
+    let s:p.insert.left     = [[s:bg0, s:green, 'bold'], [s:fg4, s:bg2]]
+    let s:p.insert.right    = [[s:bg0, s:green], [s:fg4, s:bg2]]
+    let s:p.insert.middle   = [[s:fg4, s:bg1]]
+    let s:p.terminal.left     = [[s:bg0, s:aqua, 'bold'], [s:fg4, s:bg2]]
+    let s:p.terminal.right    = [[s:bg0, s:aqua], [s:fg4, s:bg2]]
+    let s:p.terminal.middle   = [[s:fg4, s:bg1]]
+    let s:p.replace.left     = [[s:bg0, s:orange, 'bold'], [s:fg4, s:bg2]]
+    let s:p.replace.right    = [[s:bg0, s:orange], [s:fg4, s:bg2]]
+    let s:p.replace.middle   = [[s:fg4, s:bg1]]
+    let s:p.visual.left     = [[s:bg0, s:orange, 'bold'], [s:fg4, s:bg2]]
+    let s:p.visual.right    = [[s:bg0, s:orange], [s:fg4, s:bg2]]
+    let s:p.visual.middle   = [[s:fg4, s:bg1]]
+    let s:p.tabline.left    = [[s:fg4, s:bg2]]
+    let s:p.tabline.tabsel  = [[s:bg0, s:fg4, 'bold']]
+    let s:p.tabline.middle  = [[s:bg1, s:bg1]]
+    let s:p.tabline.right   = [[s:bg0, s:orange]]
+    let s:p.normal.error    = [[s:bg0, s:red]]
+    let s:p.normal.warning  = [[s:bg2, s:yellow]]
+
+    let g:lightline#colorscheme#ghostshell#palette=lightline#colorscheme#flatten(s:p)
+endif
+
+" }}}
+
+" Filetype:
+" -----------------------------------------------------------------------------
+" Diff: {{{
+hi! link diffAdded GhostshellGreen
+hi! link diffRemoved GhostshellRed
+hi! link diffChanged GhostshellAqua
+
+hi! link diffFile GhostshellOrange
+hi! link diffNewFile GhostshellYellow
+
+hi! link diffLine GhostshellBlue
+
+" }}}
+" HTML: {{{
+hi! link htmlTag GhostshellGray
+hi! link htmlEndTag GhostshellGray
+hi! link htmlScriptTag htmlTag
+hi! link htmlTagName GhostshellBlue
+hi! link htmlArg GhostshellAqua
+
+hi! link htmlTagN GhostshellFg1
+hi! link htmlSpecialTagName GhostshellBlueBold
+
+call s:HL('htmlLink', s:orange, s:none, s:underline)
+
+hi! link htmlSpecialChar GhostshellOrange
+
+call s:HL('htmlBold', s:fg, s:bg, s:bold)
+call s:HL('htmlBoldUnderline', s:fg, s:bg, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:fg, s:bg, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:fg, s:bg, s:bold . s:underline . s:italic)
+
+call s:HL('htmlUnderline', s:fg, s:bg, s:underline)
+call s:HL('htmlUnderlineItalic', s:fg, s:bg, s:underline . s:italic)
+call s:HL('htmlItalic', s:fg, s:bg, s:italic)
+
+" for django
+hi! link djangoTagBlock GhostshellFg3
+hi! link djangoVarBlock GhostshellYellow
+
+" }}}
+" XML: {{{
+hi! link xmlTag htmlTag
+hi! link xmlEndTag htmlEndTag
+hi! link xmlTagName htmlTagName
+hi! link xmlEqual GhostshellBlue
+hi! link docbkKeyword GhostshellAquaBold
+
+hi! link xmlDocTypeDecl GhostshellGray
+hi! link xmlDocTypeKeyword GhostshellPurple
+hi! link xmlCdataStart GhostshellGray
+hi! link xmlCdataCdata GhostshellPurple
+hi! link dtdFunction GhostshellGray
+hi! link dtdTagName GhostshellPurple
+
+hi! link xmlAttrib GhostshellAqua
+hi! link xmlProcessingDelim GhostshellGray
+hi! link dtdParamEntityPunct GhostshellGray
+hi! link dtdParamEntityDPunct GhostshellGray
+hi! link xmlAttribPunct GhostshellGray
+
+hi! link xmlEntity GhostshellOrange
+hi! link xmlEntityPunct GhostshellOrange
+
+" }}}
+" Vim: {{{
+call s:HL('vimCommentTitle', s:fg4_256, s:none, s:bold . s:italicize_comments)
+
+hi! link vimFunction Function
+call s:HL('vimFuncName', s:purple, s:none, s:italic)
+hi! link vimUserFunc Function
+hi! link vimNotation GhostshellYellow
+hi! link vimBracket GhostshellYellow
+hi! link vimFuncSID GhostshellYellow
+hi! link vimSetSep GhostshellFg1
+hi! link vimSetMod GhostshellFg1
+
+" }}}
+" C: {{{
+hi! link cOperator GhostshellFg2
+hi! link cStructure GhostshellBlue
+
+" }}}
+" Python: {{{
+call s:HL('pythonBuiltinFunc', s:purple, s:none, s:italic)
+call s:HL('pythonSelf', s:yellow, s:none, s:italic)
+hi! link pythonDecorator GhostshellGray
+
+" }}}
+" CSS: {{{
+call s:HL('cssFunctionName', s:purple, s:none, s:italic)
+hi! link cssIdentifier GhostshellAqua
+hi! link cssPseudoClassId GhostshellPurple
+hi! link cssUnitDecorators GhostshellBlue
+hi! link cssImportant GhostshellBlue
+
+hi! link cssAttr GhostshellOrangeBold
+hi! link cssAttrComma GhostshellFg1
+hi! link cssBraces cssAttrComma
+hi! link cssSelectorOp cssAttrComma
+hi! link cssCustomProp GhostshellAqua
+
+" }}}
+" Javascript: {{{
+hi! link jsStorageClass GhostshellBlue
+hi! link jsGlobalObjects GhostshellYellow
+hi! link jsOperator GhostshellBlue
+hi! link jsFunction GhostshellBlue
+call s:HL('jsBuiltins', s:yellow, s:none, s:italic)
+hi! link jsThis GhostshellAqua
+
+" }}}
+" YAJS: {{{
+
+" }}}
+" Markdown: {{{
+hi! link mkdNonListItemBlock GhostshellFg1
+hi! link mkdListItemLine mkdNonListItemBlock
+hi! link mkdHeading GhostshellPurpleBold
+hi! link htmlH1 mkdHeading
+hi! link mkdURL GhostshellFg4
+hi! link mkdListItem GhostshellBlue
+hi! link mkdBold GhostshellGreenBold
+call s:HL('mkdItalic', s:green, s:none, s:italic)
+
+" }}}
+" Json: {{{
+hi! link jsonKeyword GhostshellAqua
+hi! link jsonQuote GhostshellGray
+hi! link jsonBraces GhostshellFg1
+hi! link jsonStrings GhostshellFg1
+
+" }}}
+" Go: {{{
+hi! link goParen Delimiter
+hi! link goFunctionCall Function
+
+" }}}
+
+" Function:
+" -----------------------------------------------------------------------------
+" Search Highlighting Cursor: {{{
+function! GhostshellHlsShowCursor()
+    call s:HL('Cursor', s:bg0, s:hls_cursor)
+endfunction
+
+function! GhostshellHlsHideCursor()
+    call s:HL('Cursor', s:none, s:none, s:inverse)
+endfunction
+
+" }}}
+
+" vim: set sw=4 ts=4 sts=4 et tw=80 ft=vim fdm=marker

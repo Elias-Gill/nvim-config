@@ -19,6 +19,7 @@ Plug 'szw/vim-maximizer'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Functions tree
 Plug 'liuchengxu/vista.vim'
@@ -65,16 +66,18 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Themes and customization
-Plug 'nvim-lualine/lualine.nvim'
+Plug 'windwp/windline.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'elias-gill/newshell.nvim'
 Plug 'ray-x/aurora'
 "Plug 'dracula/vim'
 "Plug 'itchyny/lightline.vim'
+"Plug 'nvim-lualine/lualine.nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
+Plug 'kevinhwang91/rnvimr'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentLine'
 

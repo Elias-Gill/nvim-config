@@ -1,4 +1,6 @@
 "color themes
+
+let g:neomake_python_enabled_makers = ['pylint']
 set termguicolors
 
 " ----- archivos vimL -----
@@ -16,14 +18,17 @@ lua require('elias/lsp/lspconfig')
 lua require('elias/lsp/nvim_cmp') 
 lua require('elias/lsp/diagnostics') 
 lua require('elias/lsp/lsp_servers') 
-"lua require('elias/nvim_compe') 
 
 " utils
-lua require('elias/lualine') 
+lua require('elias/windline') 
+lua require('elias/gitsigns') 
 lua require('elias/nvimtree')
 lua require('elias/colorizer') 
 lua require('elias/treesitter') 
 
+"lua require('elias/nvim_compe') 
+"lua require('elias/lualine') 
+"lua require('wlsample.basic')
 " ----------------------------
 
 command JsonParse :%!python3.9 -m json.tool

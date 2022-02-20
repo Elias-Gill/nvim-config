@@ -29,6 +29,7 @@ nnoremap <leader>qf :q!<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :Files ~<CR>
 nnoremap <leader>nt :NvimTreeToggle<CR>
+nnoremap <leader>rt :RnvimrToggle<CR>
 
 " cicling buffers
 nnoremap <leader>[ :bprevious<CR>
