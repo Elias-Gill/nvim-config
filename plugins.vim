@@ -11,7 +11,7 @@ Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
 " Debuggin
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 
 " LaTex support 
@@ -48,36 +48,34 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'folke/trouble.nvim'
-Plug 'folke/lsp-colors.nvim'
 Plug 'tami5/lspsaga.nvim'
 
-"Plug 'hrsh7th/nvim-compe'
 "Plug 'onsails/lspkind-nvim' 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "File search and tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kevinhwang91/rnvimr'
+Plug 'windwp/windline.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-lualine/lualine.nvim'
 
 " Fonts and icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Themes and customization
-Plug 'windwp/windline.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'elias-gill/newshell.nvim'
 Plug 'ray-x/aurora'
 "Plug 'dracula/vim'
 "Plug 'itchyny/lightline.vim'
-"Plug 'nvim-lualine/lualine.nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
-Plug 'kevinhwang91/rnvimr'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentLine'
 

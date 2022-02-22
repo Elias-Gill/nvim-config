@@ -1,6 +1,4 @@
 "color themes
-
-let g:neomake_python_enabled_makers = ['pylint']
 set termguicolors
 
 " ----- archivos vimL -----
@@ -10,13 +8,12 @@ source ~/.config/nvim/config/startify.vim
 source ~/.config/nvim/config/NvimTree.vim
 "source ~/.config/nvim/config/ligthline.vim
 
-
 " ----- archivos lua ------
 " buitin lsp
 lua require('elias/lsp/lspsaga') 
 lua require('elias/lsp/lspconfig') 
 lua require('elias/lsp/nvim_cmp') 
-lua require('elias/lsp/diagnostics') 
+lua require('elias/lsp/trouble') 
 lua require('elias/lsp/lsp_servers') 
 
 " utils
@@ -26,31 +23,25 @@ lua require('elias/nvimtree')
 lua require('elias/colorizer') 
 lua require('elias/treesitter') 
 
-"lua require('elias/nvim_compe') 
-"lua require('elias/lualine') 
-"lua require('wlsample.basic')
 " ----------------------------
 
+" Parser para archivos Json desordenados
 command JsonParse :%!python3.9 -m json.tool
+" Borrar buffers sin usar
 command Bw :wa | Bwipeout hidden
-
-" Para trabajar con el asqueroso SL pero desde un editor medianamente decente
-autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
 " Colors
 let g:gruvbox_contrast_dark="soft"
 let g:newshell_transparency=1
 colorscheme newshell
 
-" native lsp
-set completeopt=menuone,noselect
-
 "opciones generales
+" lsp
+set completeopt=menuone,noselect
 " folding
 set nofoldenable
 set foldexpr=nvim_treesitter#foldexpr()
 set foldmethod=expr
-
 " indentation
 set nolist
 set smartindent
@@ -65,7 +56,6 @@ set nu rnu
 set clipboard=unnamedplus
 set cursorline
 set shortmess+=c
-set ttyfast
 set lazyredraw
 " wraping
 set wm=15
@@ -73,20 +63,20 @@ set wrap linebreak
 set colorcolumn=120
 set tw=120
 set splitbelow splitright
-set tabstop=4
-set softtabstop=4
-set expandtab
-set sw=4
+" Visuales
 set scrolloff=3
 set laststatus=2
 set showmode
 set showcmd
-
+" Tabs to spaces
+set tabstop=4
+set softtabstop=4
+set expandtab
+set sw=4
 " For plug-ins to load correctly.
 filetype plugin indent on
 set backspace=indent,eol,start
 set encoding=utf-8
-set viminfo='100,<9999,s100
 
 "" search settings
 set matchpairs+=<:>
@@ -108,14 +98,12 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 let g:bracey_browser_command="firefox"
-
-" indent lines
-let g:python_highlight_all = 1
-let g:python_highlight_space_errors = 0
 let g:indentLine_fileType = ['html', 'javascript', 'js', 'python']
 
-"lorem
-inoremap lorem Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.
+" python
+let g:python_highlight_all = 1
+let g:python_highlight_space_errors = 0
+let g:neomake_python_enabled_makers = ['pylint']
 
 "Pseudo lector de pdf a texto
 autocmd BufReadPre *.pdf set ro nowrap
@@ -126,16 +114,9 @@ autocmd BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
 autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
 autocmd BufReadPost *.sl set filetype=javascript
 
-"Tabline
-let g:airline_powerline_fonts = 1
-set guifont=terminess-ttf-nerd-font-mono:h11
-
 "LaTeX support
-let g:Tex_GotoError = 0
+"let g:Tex_GotoError = 0
 "let g:vimtex_complete_bib.match_str_fmt= 1
-
-" NvimTree
-let g:nvim_tree_quit_on_open = 1
 
 " ultisnips
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
