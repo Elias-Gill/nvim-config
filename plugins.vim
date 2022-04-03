@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/plugged') 
 "-----------------------PLUGINS---------------------------------
+Plug 'folke/todo-comments.nvim'
+Plug 'romainl/vim-cool'
 
 " Navigation with a lot of coconut oil
 Plug 'nvim-lua/plenary.nvim' " floating windows for nvim
@@ -11,8 +13,11 @@ Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
 " Debuggin
-"Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
+
 Plug 'szw/vim-maximizer'
+"Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+"Plug 'rcarriga/nvim-notify'
 
 " LaTex support 
 "Plug 'lervag/vimtex'
@@ -35,7 +40,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 "Plug 'folke/todo-comments.nvim'
 
-"Autocompletado
+"Lsp and completations
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'hrsh7th/nvim-cmp'
@@ -54,8 +59,7 @@ Plug 'tami5/lspsaga.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "File search and tree
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kevinhwang91/rnvimr'
 Plug 'windwp/windline.nvim'
@@ -86,3 +90,4 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 "-------------------------------------------------------
+

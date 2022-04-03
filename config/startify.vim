@@ -1,4 +1,8 @@
-" vim-startify (start page)
+" startify colors
+hi VimWikiLink guifg=#978fff 
+hi StartifySection guifg=#359dc2 
+hi StartifyFile guifg=#FFFFFF 
+hi StartifyHeader guifg=#ffffff
 
 let g:startify_lists = [
     \ {'type': 'bookmarks', 'header': ['                              Projects']},
@@ -8,6 +12,8 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
     \'~/mastermind/desarrollo backend/',
+    \'~/facultad/Algoritmos II/practicas/',
+    \'~/facultad/Lenguajes de programacion/practicas_c/',
     \'~/mastermind/seguridad informatica/'
     \]
 
@@ -18,18 +24,17 @@ let g:startify_change_to_dir = 1
 let g:startify_enable_special = 0
 
 let g:ascii = [
-            \'                            ___     ',
-            \'     ___       ___         /__/\    ',
-            \'    /__/\     /  /\       |  |::\   ',
-            \'    \  \:\   /  /:/       |  |:|:\  ',
-            \'     \  \:\ /__/::\     __|__|:|\:\ ',
-            \' ___  \__\:\\__\/\:\__ /__/::::| \:\',
-            \'/__/\ |  |:|   \  \:\/\\  \:\~~\__\/',
-            \'\  \:\|  |:|    \__\::/ \  \:\      ',
-            \' \  \:\__|:|    /__/:/   \  \:\     ',
-            \'  \__\::::/     \__\/     \  \:\    ',
-            \'      ~~~~                 \__\/      ',
-            \'',
-            \ ]
+            \' ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓   ',
+            \' ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒   ',
+            \' ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░  ', 
+            \' ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██   ', 
+            \' ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒  ', 
+            \' ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░  ', 
+            \' ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░  ', 
+            \'    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░     ', 
+            \'          ░    ░  ░    ░ ░        ░   ░         ░     ', 
+            \'                                 ░                    ', 
+            \]
 
 let g:startify_custom_header = startify#center(g:ascii)
+

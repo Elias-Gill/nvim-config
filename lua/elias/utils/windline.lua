@@ -148,7 +148,7 @@ local quickfix = {
 }
 
 local explorer = {
-    filetypes = { 'fern', 'NvimTree', 'lir' },
+    filetypes = { 'fern', 'NvimTree', 'lir' , 'vimspector.Watches', 'vimspector.Variales'},
     active = {
         { '  ', { 'black', 'red' } },
         { helper.separators.slant_right, { 'red', 'NormalBg' } },

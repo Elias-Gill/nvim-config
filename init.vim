@@ -1,11 +1,15 @@
+source ~/.config/nvim/plugins.vim
+
 "color themes
 set termguicolors
-
+let g:newshell_transparency=0
+colorscheme newshell
+"
 " ----- archivos vimL -----
-source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/config/remaps.vim
-source ~/.config/nvim/config/startify.vim
 source ~/.config/nvim/config/NvimTree.vim
+source ~/.config/nvim/config/neovide.vim
+source ~/.config/nvim/config/startify.vim
 "source ~/.config/nvim/config/ligthline.vim
 
 " ----- archivos lua ------
@@ -17,23 +21,26 @@ lua require('elias/lsp/trouble')
 lua require('elias/lsp/lsp_servers') 
 
 " utils
-lua require('elias/windline') 
-lua require('elias/gitsigns') 
-lua require('elias/nvimtree')
-lua require('elias/colorizer') 
-lua require('elias/treesitter') 
+lua require('elias/utils/windline') 
+lua require('elias/utils/gitsigns') 
+lua require('elias/utils/colorizer') 
+
+" navigation
+lua require('elias/navigation/treesitter') 
+lua require('elias/navigation/todo') 
+lua require('elias/navigation/fzf') 
+lua require('elias/navigation/nvimtree')
 
 " ----------------------------
 
 " Parser para archivos Json desordenados
 command JsonParse :%!python3.9 -m json.tool
+command Make :make <afile>
 " Borrar buffers sin usar
 command Bw :wa | Bwipeout hidden
 
 " Colors
 let g:gruvbox_contrast_dark="soft"
-let g:newshell_transparency=1
-colorscheme newshell
 
 "opciones generales
 " lsp
@@ -52,7 +59,7 @@ set hidden
 " mouse y numeros
 set mouse=a
 set numberwidth=4 
-set nu rnu
+set nu
 set clipboard=unnamedplus
 set cursorline
 set shortmess+=c
@@ -98,21 +105,20 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 let g:bracey_browser_command="firefox"
-let g:indentLine_fileType = ['html', 'javascript', 'js', 'python']
+let g:indentLine_fileType=['lua', 'javascript', 'python', 'html', 'c', 'vim']
+let g:CoolTotalMatches = 1
 
-" python
+"python
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
-let g:neomake_python_enabled_makers = ['pylint']
 
-"Pseudo lector de pdf a texto
+"Pseudo lector de pdf 
 autocmd BufReadPre *.pdf set ro nowrap
 autocmd BufReadPost *.pdf silent %!pdftotext "%" -nopgbrk -layout -q -eol unix -
 autocmd BufWritePost *.pdf silent !rm -rf ~/PDF/%
 autocmd BufWritePost *.pdf silent !lp -s -d pdffg "%"
 autocmd BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
 autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
-autocmd BufReadPost *.sl set filetype=javascript
 
 "LaTeX support
 "let g:Tex_GotoError = 0
@@ -122,17 +128,3 @@ autocmd BufReadPost *.sl set filetype=javascript
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-
-""PARA RESALTAR LAS VARIABLES DEBAJO DEL CURSOR
-"setl updatetime=170
-"" highlight the Word under cursor (CursorMoved is inperformant)
-"highlight WordUnderCursor cterm=underline gui=bold
-"autocmd CursorHold * call HighlightCursorWord()
-"function! HighlightCursorWord()
-"    " if hlsearch is active, don't overwrite it!
-"    let search = getreg('/')
-"    let cword = expand('<cword>')
-"    if match(cword, search) == -1
-"        exe printf('match WordUnderCursor /\V\<%s\>/', escape(cword, '/\'))
-"    endif
-"endfunction

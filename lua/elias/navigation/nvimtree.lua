@@ -46,7 +46,7 @@ require'nvim-tree'.setup {
         height = 30,
         hide_root_folder = false,
         side = 'left',
-        auto_resize = false,
+        auto_resize = true,
         mappings = {
             custom_only = true,
             list = {
@@ -95,10 +95,10 @@ require'nvim-tree'.setup {
     },
     actions = {
         change_dir = {
-            global = false,
+            global = true,
         },
         open_file = {
-            quit_on_open = true,
+            quit_on_open = false,
             window_picker = {
                 enable = true,
                 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
