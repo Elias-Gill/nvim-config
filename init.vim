@@ -1,11 +1,14 @@
 "color themes
 set termguicolors
+autocmd VimEnter set guifont=FiraCodeNF:h18
+autocmd VimEnter cd ~/Documents/
 
 " ----- archivos vimL -----
 source ~/AppData/Local/nvim/plugins.vim
 source ~/AppData/Local/nvim/config/remaps.vim
 source ~/AppData/Local/nvim/config/startify.vim
 source ~/AppData/Local/nvim/config/NvimTree.vim
+source ~/AppData/Local/nvim/config/neovide.vim
 
 
 " ----- archivos lua ------
@@ -33,7 +36,7 @@ autocmd BufReadPre *.sl setlocal ts=3 sw=3 syntax=javascript
 
 " Colors
 let g:gruvbox_contrast_dark="soft"
-let g:newshell_transparency=1
+let g:newshell_transparency=0
 colorscheme newshell
 
 " native lsp
@@ -122,7 +125,6 @@ autocmd BufReadPost *.sl set filetype=javascript
 
 "Tabline
 let g:airline_powerline_fonts = 1
-set guifont=terminess-ttf-nerd-font-mono:h11
 
 "LaTeX support
 let g:Tex_GotoError = 0
