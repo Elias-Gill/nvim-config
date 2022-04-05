@@ -47,16 +47,18 @@ vnoremap <leader>lp :s/
 "Live Server 
 nnoremap <leader>sb :Bracey<CR>
 
-" Buscar funciones y defin" LSP config (the mappings used in the default file don't quite work right)
+" Buscar funciones y definiciones 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 "nnoremap <silent>co <cmd>lua vim.lsp.buf.code_action()<CR>
 "nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 
+" Trouble and todos comments
 nnoremap <silent><leader>to :TroubleToggle<CR>
 nnoremap <silent><leader>tg :TodoTrouble<CR>
 
+" diagnostics navigation
 nnoremap <silent>[e :Lspsaga diagnostic_jump_prev<cr>
 nnoremap <silent>]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent>]t :Lspsaga show_line_diagnostics<cr>
@@ -69,7 +71,6 @@ nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
 nnoremap <leader>tn :tabnew<cr>
 nnoremap <S-tab> gT
 nnoremap <TAB> gt
-
 
 "utilidades
 nnoremap n nzzzv
@@ -114,7 +115,6 @@ nnoremap <silent><up> :resize +5<CR>
 nnoremap <silent><down> :resize -5<CR>
 nnoremap <silent><left> :vertical resize -5<CR>
 nnoremap <silent><right> :vertical resize +5<CR>
-
 " maximizer
 nnoremap <leader>mt :MaximizerToggle<cr>
 
@@ -128,5 +128,3 @@ nnoremap <silent><leader>du :call vimspector#ToggleBreakpoint()<Cr>
 nnoremap <silent><leader>df :<Plug>VimspectorToggleConditionalBreakpoint<CR>
 nnoremap <silent><leader>dc :call vimspector#RunToCursor()<Cr>
 
-"debug ui
-nnoremap <leader>DB :lua require('dapui').toggle()<cr>
