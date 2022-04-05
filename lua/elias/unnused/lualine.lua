@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'ayu_dark',
+    theme = 'horizon',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -17,8 +17,8 @@ require('lualine').setup {
                 path = 0,           
                 shorting_target = 40,
                 symbols = {
-                    modified = '  🧿',      
-                    readonly = ' [🔐]',     
+                    modified = '  💽',      
+                    readonly = ' [🔑]',     
                     unnamed = '[No Name]',
                 }
             }
