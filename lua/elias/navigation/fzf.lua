@@ -228,7 +228,7 @@ require'fzf-lua'.setup {
     -- NOTE: 'find -printf' requires GNU find
     -- cmd            = "find . -type f -printf '%P\n'",
     find_opts         = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
-    rg_opts           = "--color=never --files --follow -g '!.git'",
+    rg_opts           = "--color=never --files --follow -g '!.git' --ignore-file ~/.config/rg.ignore",
     fd_opts           = "--color=never --type f --follow --exclude .git",
     actions = {
       -- inherits from 'actions.files', here we can override

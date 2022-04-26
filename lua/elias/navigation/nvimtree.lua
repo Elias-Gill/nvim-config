@@ -39,10 +39,10 @@ require'nvim-tree'.setup {
     git = {
         enable = true,
         ignore = true,
-        timeout = 500,
+        timeout = 1000,
     },
     view = {
-        width = 34,
+        width = 45,
         height = 30,
         hide_root_folder = false,
         side = 'left',

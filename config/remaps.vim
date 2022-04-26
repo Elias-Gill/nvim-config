@@ -22,7 +22,7 @@ nnoremap <leader>qf :q!<CR>
 " busqueda de archivos
 nnoremap <C-p> :FzfLua files<CR>
 nnoremap <C-s> :FzfLua files cwd=~/<CR>
-nnoremap <leader>nt :NvimTreeToggle<CR>
+nnoremap <leader>nt :NvimTreeFindFileToggle<CR>
 nnoremap <leader>rt :RnvimrToggle<CR>
 
 " cicling buffers
@@ -49,10 +49,8 @@ nnoremap <leader>sb :Bracey<CR>
 
 " Buscar funciones y definiciones 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent>co <cmd>lua vim.lsp.buf.code_action()<CR>
-"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gr :FzfLua lsp_references<CR>
+nnoremap <silent> gi :FzfLua lsp_implementations<CR>
 
 " Trouble and todos comments
 nnoremap <silent><leader>to :TroubleToggle<CR>
@@ -101,8 +99,6 @@ nnoremap <leader>vf :Vista nvim_lsp <CR>
 nnoremap <leader>vt :Vista finder nvim_lsp <CR>
 
 " git
-nnoremap <leader>gb :Git checkout 
-nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gs :G<CR>
 
 " block the arrow keys

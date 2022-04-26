@@ -2,9 +2,10 @@ source ~/.config/nvim/plugins.vim
 
 "color themes
 set termguicolors
-let g:newshell_transparency=0
+let g:newshell_transparency=1
 colorscheme newshell
-"
+filetype plugin on
+
 " ----- archivos vimL -----
 source ~/.config/nvim/config/remaps.vim
 source ~/.config/nvim/config/NvimTree.vim
@@ -95,7 +96,7 @@ set smartcase
 
 "emmet html
 let g:user_emmet_mode='i'
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,vue EmmetInstall
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key=','
 
@@ -105,7 +106,7 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 let g:bracey_browser_command="firefox"
-let g:indentLine_fileType=['lua', 'javascript', 'python', 'html', 'c', 'vim']
+let g:indentLine_fileType=['lua', 'vue', 'javascript', 'python', 'html', 'c', 'vim']
 let g:CoolTotalMatches = 1
 
 "python
@@ -128,3 +129,4 @@ autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]
