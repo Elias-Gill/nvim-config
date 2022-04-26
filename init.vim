@@ -129,4 +129,7 @@ autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+let g:codelens_bg_colour='#ff96e1'
+let g:codelens_show_references = 1
+
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]

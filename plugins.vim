@@ -17,6 +17,7 @@ Plug 'szw/vim-maximizer'
 " Git inegration
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'markwoodhall/vim-codelens'
 
 " Functions tree
 Plug 'liuchengxu/vista.vim'
