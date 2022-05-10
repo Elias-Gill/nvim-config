@@ -10,14 +10,14 @@ Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
 " Debuggin
-Plug 'puremourning/vimspector'
-
 Plug 'szw/vim-maximizer'
+" Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'puremourning/vimspector'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'markwoodhall/vim-codelens'
+Plug 'APZelos/blamer.nvim'
 
 " Functions tree
 Plug 'liuchengxu/vista.vim'
@@ -25,11 +25,8 @@ Plug 'liuchengxu/vista.vim'
 "Super-completado html
 Plug 'mattn/emmet-vim'
 
-"Auto reload browser
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-
 " Tree sitter 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 "Lsp and completations
@@ -62,7 +59,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes and customization
 Plug 'morhetz/gruvbox'
 Plug 'elias-gill/newshell.nvim'
-Plug 'ray-x/aurora'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'jiangmiao/auto-pairs'
@@ -73,17 +69,8 @@ Plug 'yggdroot/indentLine'
 Plug 'vimwiki/vimwiki'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/todo-comments.nvim'
-Plug 'romainl/vim-cool'
+Plug 'tpope/vim-surround'
 
-"Unnused 
-"Plug 'tpope/vim-surround'
-"Plug 'preservim/nerdcommenter'
-"Plug 'dracula/vim'
-"Plug 'itchyny/lightline.vim'
-"Plug 'nvim-lualine/lualine.nvim'
-"Plug 'rcarriga/nvim-notify'
-"Plug 'lervag/vimtex'
-"Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 "-------------------------------------------------------
 

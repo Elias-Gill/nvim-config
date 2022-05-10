@@ -60,7 +60,7 @@ nnoremap <silent><leader>tg :TodoTrouble<CR>
 nnoremap <silent>[e :Lspsaga diagnostic_jump_prev<cr>
 nnoremap <silent>]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent>]t :Lspsaga show_line_diagnostics<cr>
-nnoremap <silent><leader>rr :Lspsaga rename<CR>
+nnoremap <silent><leader>rr :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent>co :Lspsaga code_action<CR>
 nnoremap <silent>K :Lspsaga hover_doc<CR>
 nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
@@ -75,6 +75,9 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+"make < > shifts keep selection
+vnoremap < <gv
+vnoremap > >gv
 
 " teclas arriba y abajo en insert mode
 inoremap <C-j> <down>
@@ -116,11 +119,12 @@ nnoremap <leader>mt :MaximizerToggle<cr>
 
 " Debug
 nnoremap <silent><F7> :call vimspector#StepInto()<cr>
-nnoremap <silent><S-F7> :call vimspector#StepOver()<cr>
+nnoremap <silent><F6> :call vimspector#StepOver()<cr>
 nnoremap <silent><leader>db :call vimspector#Continue()<Cr>
 nnoremap <silent><leader>dr :call vimspector#Restart()<Cr>
 nnoremap <silent><leader>ds :call vimspector#Reset()<Cr>
 nnoremap <silent><leader>du :call vimspector#ToggleBreakpoint()<Cr>
-nnoremap <silent><leader>df :<Plug>VimspectorToggleConditionalBreakpoint<CR>
+nnoremap <silent><leader>df <Plug>VimspectorToggleConditionalBreakpoint<cr>
+nnoremap <silent><leader>de <Plug>VimspectorBalloonEval<cr>
 nnoremap <silent><leader>dc :call vimspector#RunToCursor()<Cr>
 

@@ -2,46 +2,39 @@ source ~/.config/nvim/plugins.vim
 
 "color themes
 set termguicolors
-let g:newshell_transparency=1
+let g:newshell_background="None"
 colorscheme newshell
-filetype plugin on
 
+if exists('g:neovide')
+    source ~/.config/nvim/config/neovide.vim
+end
 " ----- archivos vimL -----
 source ~/.config/nvim/config/remaps.vim
 source ~/.config/nvim/config/NvimTree.vim
-source ~/.config/nvim/config/neovide.vim
 source ~/.config/nvim/config/startify.vim
-"source ~/.config/nvim/config/ligthline.vim
 
 " ----- archivos lua ------
 " buitin lsp
-lua require('elias/lsp/lspsaga') 
-lua require('elias/lsp/lspconfig') 
 lua require('elias/lsp/nvim_cmp') 
 lua require('elias/lsp/trouble') 
-lua require('elias/lsp/lsp_servers') 
+lua require('elias/lsp/lsp_general') 
 
 " utils
 lua require('elias/utils/windline') 
 lua require('elias/utils/gitsigns') 
-lua require('elias/utils/colorizer') 
 
 " navigation
 lua require('elias/navigation/treesitter') 
 lua require('elias/navigation/todo') 
 lua require('elias/navigation/fzf') 
 lua require('elias/navigation/nvimtree')
-
 " ----------------------------
 
 " Parser para archivos Json desordenados
 command JsonParse :%!python3.9 -m json.tool
-command Make :make <afile>
 " Borrar buffers sin usar
 command Bw :wa | Bwipeout hidden
-
-" Colors
-let g:gruvbox_contrast_dark="soft"
+command W :w
 
 "opciones generales
 " lsp
@@ -107,7 +100,6 @@ let &t_EI = "\<Esc>[2 q"
 
 let g:bracey_browser_command="firefox"
 let g:indentLine_fileType=['lua', 'vue', 'javascript', 'python', 'html', 'c', 'vim']
-let g:CoolTotalMatches = 1
 
 "python
 let g:python_highlight_all = 1
@@ -121,15 +113,8 @@ autocmd BufWritePost *.pdf silent !lp -s -d pdffg "%"
 autocmd BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
 autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
 
-"LaTeX support
-"let g:Tex_GotoError = 0
-"let g:vimtex_complete_bib.match_str_fmt= 1
-
 " ultisnips
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-let g:codelens_bg_colour='#ff96e1'
-let g:codelens_show_references = 1
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]

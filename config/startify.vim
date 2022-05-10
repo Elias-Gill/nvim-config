@@ -5,9 +5,9 @@ hi StartifyFile guifg=#FFFFFF
 hi StartifyHeader guifg=#ffffff
 
 let g:startify_lists = [
-    \ {'type': 'bookmarks', 'header': ['                              Projects']},
-    \ {'type': 'sessions', 'header': ['                              Sessions']},
-    \ {'type': 'files', 'header': ['                              Recent']},
+    \ {'type': 'bookmarks', 'header': ['                             Projects']},
+    \ {'type': 'sessions', 'header': ['                             Sessions']},
+    \ {'type': 'files', 'header': ['                             Recent']},
     \]
 
 let g:startify_bookmarks = [
@@ -24,16 +24,16 @@ let g:startify_change_to_dir = 1
 let g:startify_enable_special = 0
 
 let g:ascii = [
-            \' ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓   ',
-            \' ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒   ',
-            \' ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░  ', 
-            \' ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██   ', 
-            \' ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒  ', 
-            \' ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░  ', 
-            \' ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░  ', 
-            \'    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░     ', 
-            \'          ░    ░  ░    ░ ░        ░   ░         ░     ', 
-            \'                                 ░                    ', 
+            \'                                                      ', 
+            \'                                                      ', 
+            \'                                                      ', 
+            \' ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗  ',
+            \' ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║  ',
+            \' ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║  ', 
+            \' ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║  ', 
+            \' ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║  ', 
+            \' ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝  ', 
+            \'                                                      ', 
             \]
 
 let g:startify_custom_header = startify#center(g:ascii)
