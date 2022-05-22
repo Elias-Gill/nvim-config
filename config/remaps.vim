@@ -78,6 +78,7 @@ vnoremap K :m '<-2<CR>gv=gv
 "make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
+nnoremap <cr> o<esc>
 
 " teclas arriba y abajo en insert mode
 inoremap <C-j> <down>
@@ -85,6 +86,7 @@ inoremap <C-k> <up>
 inoremap <C-l> <right>
 
 " Moverse entre splits
+" nnoremap <silent><leader>mb :call WindowSwap#EasyWindowSwap()<CR>
 nnoremap <C-j> <c-w>j
 nnoremap <C-k> <c-w>k
 nnoremap <C-l> <c-w>l
