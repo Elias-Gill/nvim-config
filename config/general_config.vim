@@ -4,11 +4,6 @@ command JsonParse :%!python3.9 -m json.tool
 command Bw :wa | Bwipeout hidden
 command W :w
 
-"color themes
-set termguicolors
-let g:newshell_background="None"
-colorscheme newshell
-
 "opciones generales
 " lsp
 set completeopt=menuone,noselect

@@ -79,6 +79,7 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap < <gv
 vnoremap > >gv
 nnoremap <cr> o<esc>
+nnoremap <A-cr> O<esc>
 
 " teclas arriba y abajo en insert mode
 inoremap <C-j> <down>

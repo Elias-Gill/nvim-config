@@ -4,9 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim' " floating windows for nvim
 Plug 'ThePrimeagen/harpoon'
 Plug 'Asheq/close-buffers.vim'
-
-Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
-" Plug 'rcarriga/nvim-notify'
+Plug 'romainl/vim-cool'
 
 " Start page
 Plug 'mhinz/vim-startify'
@@ -14,13 +12,14 @@ Plug 'dstein64/vim-startuptime'
 
 " Debuggin
 Plug 'szw/vim-maximizer'
+" Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 " Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 " Plug 'puremourning/vimspector'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'APZelos/blamer.nvim'
+" Plug 'APZelos/blamer.nvim'
 
 " Functions tree
 Plug 'liuchengxu/vista.vim'
@@ -60,11 +59,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Themes and customization
-Plug 'morhetz/gruvbox'
 Plug 'elias-gill/newshell.nvim'
+Plug 'catppuccin/nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'b3nj5m1n/kommentary' 
 Plug 'lukas-reineke/indent-blankline.nvim'
 
@@ -73,7 +72,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/todo-comments.nvim'
 Plug 'tpope/vim-surround'
-" Plug 'wesQ3/vim-windowswap'
 
 call plug#end()
 "-------------------------------------------------------

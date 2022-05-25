@@ -22,13 +22,11 @@ lspconfig.cssls.setup{on_attach = on_attach}
 lspconfig.jsonls.setup{on_attach = on_attach}
 lspconfig.bashls.setup{on_attach = on_attach}
 
--- lspsaga
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics,
     {
         virtual_text = {
-             --prefix = "",
             prefix = "",
             spacing = 1
         },
@@ -37,6 +35,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 		update_in_insert = true
     }
 )
+-- lspsaga
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
 

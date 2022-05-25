@@ -3,6 +3,12 @@ source ~/.config/nvim/plugins.vim
 if exists('g:neovide')
     source ~/.config/nvim/config/neovide.vim
 end
+
+"color themes
+set termguicolors
+let g:newshell_background="None"
+colorscheme newshell
+
 " ----- archivos vimL -----
 source ~/.config/nvim/config/general_config.vim
 source ~/.config/nvim/config/remaps.vim
@@ -19,6 +25,7 @@ lua require('elias/lsp/lsp_general')
 lua require('elias/utils/windline') 
 lua require('elias/utils/gitsigns') 
 lua require('elias/utils/various-utils') 
+" lua require('elias/utils/sniprun') 
 
 " navigation
 lua require('elias/navigation/treesitter') 
@@ -34,6 +41,7 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key=','
 
 let g:bracey_browser_command="firefox"
+let g:CoolTotalMatches = 0
 
 "python
 let g:python_highlight_all = 1
@@ -44,9 +52,9 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]
-" let g:windowswap_map_keys = 0
 
 let g:indent_blankline_filetype = [ "lua", "vue", "javascript", "python", "html", "c", "vim" ]
-let g:indent_blankline_char_list = ['¦']
-let g:indent_blankline_context_char = '¦' 
-hi IndentBlanklineContextChar guifg=#ffcf3f
+let g:indent_blankline_char_list = ['┆']
+let g:indent_blankline_context_char = '┆' 
+hi IndentBlanklineContextChar guifg=#ab9457
+
