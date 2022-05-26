@@ -31,7 +31,6 @@ lua require('elias/utils/colorizer')
 " navigation
 lua require('elias/navigation/treesitter') 
 lua require('elias/navigation/todo') 
-lua require('elias/navigation/fzf') 
 lua require('elias/navigation/nvimtree')
 
 " ----------------------------

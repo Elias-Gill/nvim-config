@@ -20,8 +20,7 @@ nnoremap <leader>qa :qa<cr>
 nnoremap <leader>qf :q!<CR>
 
 " busqueda de archivos
-nnoremap <C-p> :FzfLua files<CR>
-nnoremap <C-s> :FzfLua files cwd=~/<CR>
+nnoremap <C-p> :Files<CR>
 nnoremap <leader>nt :NvimTreeToggle<CR>
 nnoremap <leader>rt :RnvimrToggle<CR>
 

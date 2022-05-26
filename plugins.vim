@@ -13,7 +13,7 @@ Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
 " Debuggin
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector'
 
 Plug 'szw/vim-maximizer'
 "Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
@@ -59,7 +59,8 @@ Plug 'tami5/lspsaga.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "File search and tree
-Plug 'ibhagwan/fzf-lua'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kevinhwang91/rnvimr'
 Plug 'windwp/windline.nvim'
