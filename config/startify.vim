@@ -17,7 +17,7 @@ let g:startify_bookmarks = [
     \'~/mastermind/seguridad informatica/'
     \]
 
-let g:startify_files_number = 3
+let g:startify_files_number = 4
 let g:startify_padding_left= 32
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1

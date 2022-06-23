@@ -78,7 +78,7 @@ vnoremap K :m '<-2<CR>gv=gv
 "make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <cr> o<esc>
+nnoremap <cr> o<esc>k
 nnoremap <A-cr> O<esc>
 
 " teclas arriba y abajo en insert mode
@@ -106,6 +106,9 @@ nnoremap <leader>vt :Vista finder nvim_lsp <CR>
 
 " git
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>3 :Gdiffsplit!<CR>
+nnoremap <leader>1 :diffget //2<CR>
+nnoremap <leader>2 :diffget //3<CR>
 
 " block the arrow keys
 nnoremap <up> <nop>
@@ -121,13 +124,19 @@ nnoremap <silent><right> :vertical resize +5<CR>
 nnoremap <leader>mt :MaximizerToggle<cr>
 
 " Debug
-nnoremap <silent><F7> :call vimspector#StepInto()<cr>
-nnoremap <silent><F6> :call vimspector#StepOver()<cr>
-nnoremap <silent><leader>db :call vimspector#Continue()<Cr>
-nnoremap <silent><leader>dr :call vimspector#Restart()<Cr>
-nnoremap <silent><leader>ds :call vimspector#Reset()<Cr>
-nnoremap <silent><leader>du :call vimspector#ToggleBreakpoint()<Cr>
-nnoremap <silent><leader>df <Plug>VimspectorToggleConditionalBreakpoint<cr>
-nnoremap <silent><leader>de <Plug>VimspectorBalloonEval<cr>
-nnoremap <silent><leader>dc :call vimspector#RunToCursor()<Cr>
+nnoremap <silent><F4> :lua require'dap'.step_into()<cr>
+nnoremap <silent><F5> :lua require'dap'.step_over()<cr>
+nnoremap <silent><leader>db :lua require'dap'.continue()<Cr>
+nnoremap <silent><leader>du :lua require'dap'.toggle_breakpoint()<Cr>
+nnoremap <silent><leader>ds :lua require'dap'.terminate()<Cr>
+nnoremap <silent><leader>df :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>
+nnoremap <silent><leader>dc :lua require'dap'.run_to_cursor()<Cr>
 
+" Luasnips
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+nnoremap <leader><leader>s :so ~/.config/nvim/lua/elias/lsp/luasnips.lua <CR>

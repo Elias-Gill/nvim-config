@@ -21,6 +21,7 @@ lspconfig.html.setup{on_attach = on_attach}
 lspconfig.cssls.setup{on_attach = on_attach}
 lspconfig.jsonls.setup{on_attach = on_attach}
 lspconfig.bashls.setup{on_attach = on_attach}
+lspconfig.gopls.setup{on_attach = on_attach}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(

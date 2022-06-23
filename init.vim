@@ -6,20 +6,21 @@ end
 
 "color themes
 set termguicolors
-let g:newshell_background="None"
+let g:newshell_background="medium"
 colorscheme newshell
 
 " ----- archivos vimL -----
 source ~/.config/nvim/config/general_config.vim
 source ~/.config/nvim/config/remaps.vim
-source ~/.config/nvim/config/NvimTree.vim
 source ~/.config/nvim/config/startify.vim
 
 " ----- archivos lua ------
 " buitin lsp
 lua require('elias/lsp/nvim_cmp') 
 lua require('elias/lsp/trouble') 
+lua require('elias/lsp/luasnips') 
 lua require('elias/lsp/lsp_general') 
+lua require('elias/lsp/debug') 
 
 " utils
 lua require('elias/utils/windline') 
@@ -47,9 +48,9 @@ let g:CoolTotalMatches = 0
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 
-" ultisnips
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" " ultisnips
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]
 
@@ -57,4 +58,10 @@ let g:indent_blankline_filetype = [ "lua", "vue", "javascript", "python", "html"
 let g:indent_blankline_char_list = ['┆']
 let g:indent_blankline_context_char = '┆' 
 hi IndentBlanklineContextChar guifg=#ab9457
+
+" let g:vscode_italic_comment = 0
+" let g:vscode_disable_nvimtree_bg = v:true
+" colorscheme vscode
+" hi NvimTreeFolderName guifg=#99e999
+" hi NvimTreeOpenedFolderName guifg=#4aa189
 

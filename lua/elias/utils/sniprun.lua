@@ -7,4 +7,3 @@ require'sniprun'.setup({
         notification_timeout = 20   --# timeout for nvim_notify output
     },
 })
-

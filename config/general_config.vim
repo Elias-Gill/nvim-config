@@ -5,7 +5,11 @@ command Bw :wa | Bwipeout hidden
 command W :w
 
 "opciones generales
+set laststatus=3
+set winbar=%=%f%m
 " lsp
+set diffopt+=vertical
+let g:python3_host_prog = '/bin/python3.10'
 set completeopt=menuone,noselect
 " folding
 set nofoldenable
@@ -29,12 +33,11 @@ set lazyredraw
 " wraping
 set wm=15
 set wrap linebreak
-set colorcolumn=120
-set tw=120
+set colorcolumn=125
+set tw=125
 set splitbelow splitright
 " Visuales
 set scrolloff=3
-set laststatus=2
 set showmode
 set showcmd
 " Tabs to spaces

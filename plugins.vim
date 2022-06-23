@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged') 
 "-----------------------PLUGINS---------------------------------
 " Navigation with a lot of coconut oil
-Plug 'nvim-lua/plenary.nvim' " floating windows for nvim
+Plug 'nvim-lua/plenary.nvim' "Custom libraries for neovim 
 Plug 'ThePrimeagen/harpoon'
 Plug 'Asheq/close-buffers.vim'
 Plug 'romainl/vim-cool'
@@ -9,12 +9,6 @@ Plug 'romainl/vim-cool'
 " Start page
 Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
-
-" Debuggin
-Plug 'szw/vim-maximizer'
-" Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
-" Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-" Plug 'puremourning/vimspector'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
@@ -30,15 +24,19 @@ Plug 'mattn/emmet-vim'
 " Tree sitter 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'andymass/vim-matchup'
 
 "Lsp and completations
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'onsails/lspkind.nvim'
+"Plug 'SirVer/ultisnips'
+"Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Lsp and diagnostics
 Plug 'neovim/nvim-lspconfig'
@@ -60,7 +58,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Themes and customization
 Plug 'elias-gill/newshell.nvim'
-Plug 'catppuccin/nvim'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'Mofiqul/dracula.nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'windwp/nvim-autopairs'
@@ -72,6 +71,17 @@ Plug 'vimwiki/vimwiki'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/todo-comments.nvim'
 Plug 'tpope/vim-surround'
+Plug 'szw/vim-maximizer'
+
+" Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+" Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'puremourning/vimspector'
+
+" debuggers
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'mfussenegger/nvim-dap-python'
 
 call plug#end()
 "-------------------------------------------------------
