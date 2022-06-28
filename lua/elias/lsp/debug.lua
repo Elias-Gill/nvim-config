@@ -1,7 +1,6 @@
 require('dap-go').setup()
 require('dap-python').setup("/home/elias/.virtualenvs/debugpy/bin/python")
 require("dapui").setup({
-    icons = { expanded = "⇓ ", collapsed = "⇒ " },
     mappings = {
         expand = { "<CR>", "<2-LeftMouse>" },
         open = "o",
@@ -10,24 +9,24 @@ require("dapui").setup({
         repl = "r",
         toggle = "t",
     },
-    sidebar = {
-        elements = {
-            { id = "breakpoints", size = 0.25},
-            { id = "scopes", size = 0.30},
-            { id = "watches", size = 0.25 },
-            { id = "stacks", size = 0.20 },
-        },
-        size = 40,
-        position = "left", -- Can be "left", "right", "top", "bottom"
-    },
-    tray = {
-        elements = { },
-        size = 0,
-        position = "bottom", -- Can be "left", "right", "top", "bottom"
-    },
-    windows = { indent = 2 },
-})
 
+    layouts = {
+        {
+            elements = {
+                { id = "breakpoints", size = 0.25},
+                { id = "scopes", size = 0.30},
+                { id = "watches", size = 0.25 },
+                { id = "stacks", size = 0.20 },
+            },
+            size = 40,
+            position = "left", -- Can be "left", "right", "top", "bottom"
+        },
+        -- puedo agregar  mas tablas aca para agregar otros elementos
+    },
+
+    expand_lines = false,
+    windows = { indent = 3 },
+})
 
 -- listeners para abrir ui automagicamente
 local dap, dapui = require("dap"), require("dapui")
@@ -40,4 +39,10 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
-dap.defaults.fallback.terminal_win_cmd = '0split new'
+
+dap.defaults.fallback.terminal_win_cmd = '9split new'
+--[[ dap.defaults.fallback.force_external_terminal = true
+dap.defaults.fallback.external_terminal = {
+    command = '/usr/bin/alacritty';
+    args = {'-e'};
+} ]]

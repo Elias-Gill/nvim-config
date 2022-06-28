@@ -5,6 +5,7 @@ Plug 'nvim-lua/plenary.nvim' "Custom libraries for neovim
 Plug 'ThePrimeagen/harpoon'
 Plug 'Asheq/close-buffers.vim'
 Plug 'romainl/vim-cool'
+" Plug 'ThePrimeagen/refactoring.nvim'
 
 " Start page
 Plug 'mhinz/vim-startify'
@@ -35,8 +36,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'onsails/lspkind.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 "Plug 'SirVer/ultisnips'
 "Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+" Pre built snippets
+Plug 'rafamadriz/friendly-snippets'
 
 " Lsp and diagnostics
 Plug 'neovim/nvim-lspconfig'
@@ -56,10 +61,9 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
-" Themes and customization
+" Themes, colororschemes and customization
 Plug 'elias-gill/newshell.nvim'
 Plug 'Mofiqul/vscode.nvim'
-Plug 'Mofiqul/dracula.nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'windwp/nvim-autopairs'

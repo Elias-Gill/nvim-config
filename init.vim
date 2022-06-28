@@ -63,5 +63,6 @@ hi IndentBlanklineContextChar guifg=#ab9457
 " let g:vscode_disable_nvimtree_bg = v:true
 " colorscheme vscode
 " hi NvimTreeFolderName guifg=#99e999
-" hi NvimTreeOpenedFolderName guifg=#4aa189
+" hi NvimTreeOpenedFolderName guifg=#99e999
+" hi NvimTreeFile
 

@@ -50,6 +50,7 @@ nnoremap <leader>sb :Bracey<CR>
 " Buscar funciones y definiciones 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gr :FzfLua lsp_references<CR>
+nnoremap <silent>=f :lua vim.lsp.buf.format ({ async = true })<CR>
 nnoremap <silent> gi :FzfLua lsp_implementations<CR>
 
 " Trouble and todos comments
@@ -63,6 +64,7 @@ nnoremap <silent>]t :Lspsaga show_line_diagnostics<cr>
 nnoremap <silent><leader>rr :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent>co :Lspsaga code_action<CR>
 nnoremap <silent>K :Lspsaga hover_doc<CR>
+inoremap <silent><c-p> <c-o>:Lspsaga signature_help<CR>
 nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
 
 "cambiar pestanas

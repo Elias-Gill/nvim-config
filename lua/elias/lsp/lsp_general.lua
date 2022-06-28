@@ -11,17 +11,16 @@ require("nvim-lsp-installer").setup({
 
 -- lspconfig
 local lspconfig = require('lspconfig')
-lspconfig.sumneko_lua.setup { on_attach = on_attach }
 lspconfig.pyright.setup { on_attach = on_attach }
 lspconfig.tsserver.setup { on_attach = on_attach }
 lspconfig.clangd.setup{on_attach = on_attach}
-lspconfig.volar.setup{on_attach = on_attach}
-lspconfig.vuels.setup{on_attach = on_attach}
-lspconfig.html.setup{on_attach = on_attach}
-lspconfig.cssls.setup{on_attach = on_attach}
-lspconfig.jsonls.setup{on_attach = on_attach}
 lspconfig.bashls.setup{on_attach = on_attach}
 lspconfig.gopls.setup{on_attach = on_attach}
+-- lspconfig.sumneko_lua.setup { on_attach = on_attach }
+-- lspconfig.vuels.setup{on_attach = on_attach}
+-- lspconfig.html.setup{on_attach = on_attach}
+-- lspconfig.cssls.setup{on_attach = on_attach}
+-- lspconfig.jsonls.setup{on_attach = on_attach}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(
@@ -40,3 +39,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
 
+-- null-ls for linting
+local null = require("null-ls")
+local diagnostic = null.builtins.diagnostics
+local formatting = null.builtins.formatting
+local actions = null.builtins.code_actions
+
+local sources = {
+    formatting.black,
+}
+null.setup({ sources = sources})
