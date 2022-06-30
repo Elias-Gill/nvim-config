@@ -16,7 +16,8 @@ lspconfig.tsserver.setup { on_attach = on_attach }
 lspconfig.clangd.setup{on_attach = on_attach}
 lspconfig.bashls.setup{on_attach = on_attach}
 lspconfig.gopls.setup{on_attach = on_attach}
--- lspconfig.sumneko_lua.setup { on_attach = on_attach }
+lspconfig.sumneko_lua.setup { on_attach = on_attach }
+lspconfig.jdtls.setup { on_attach = on_attach }
 -- lspconfig.vuels.setup{on_attach = on_attach}
 -- lspconfig.html.setup{on_attach = on_attach}
 -- lspconfig.cssls.setup{on_attach = on_attach}
@@ -41,9 +42,9 @@ saga.init_lsp_saga()
 
 -- null-ls for linting
 local null = require("null-ls")
-local diagnostic = null.builtins.diagnostics
+-- local diagnostic = null.builtins.diagnostics
 local formatting = null.builtins.formatting
-local actions = null.builtins.code_actions
+-- local actions = null.builtins.code_actions
 
 local sources = {
     formatting.black,
