@@ -21,6 +21,7 @@ Plug 'liuchengxu/vista.vim'
 
 "Super-completado html
 Plug 'mattn/emmet-vim'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' } "tabnine AI autocomplete
 
 " Tree sitter 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
