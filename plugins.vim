@@ -21,15 +21,8 @@ Plug 'liuchengxu/vista.vim'
 
 "Super-completado html
 Plug 'mattn/emmet-vim'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' } "tabnine AI autocomplete
 
-" Tree sitter 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'andymass/vim-matchup'
-
-"Lsp and completations
-Plug 'L3MON4D3/LuaSnip'
+" Neovim Cmp (completition engine)
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -37,18 +30,23 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'onsails/lspkind.nvim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' } "tabnine AI autocomplete
 "Plug 'SirVer/ultisnips'
 "Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-" Pre built snippets
-Plug 'rafamadriz/friendly-snippets'
+" Tree sitter 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'andymass/vim-matchup'
 
-" Lsp and diagnostics
+"Lsp and snippets
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'tami5/lspsaga.nvim'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 
 "Tabline and status bar
 Plug 'windwp/windline.nvim'

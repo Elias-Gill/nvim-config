@@ -33,6 +33,8 @@ cmp.setup({
                     buffer = "[Buf]",
                     nvim_lua = "[Lua]",
                     path = "[Path]",
+                    cmp_tabnine = "[📠]",
+
                 })[entry.source.name]
                 return vim_item
             end
@@ -64,16 +66,13 @@ cmp.setup({
 })
 -- require("cmp_nvim_ultisnips").setup{}
 
-local tabnine = require('cmp_tabnine.config')
+--[[ local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
 	max_lines = 100;
-	max_num_results = 10;
+	max_num_results = 5;
 	sort = true;
 	run_on_every_keystroke = true;
-	snippet_placeholder = '📠';
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	};
+	snippet_placeholder = 'Tab';
+	ignored_file_types = { };
 	show_prediction_strength = false;
-})
+}) ]]
