@@ -1,4 +1,6 @@
 let mapleader = " "
+" bug 
+nnoremap <C-i> <C-i> 
 
 nnoremap ;; A;<esc>
 tnoremap <esc> <c-\><c-N>
