@@ -64,9 +64,11 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 "Pseudo lector de pdf 
-autocmd BufReadPre *.pdf set ro nowrap
-autocmd BufReadPost *.pdf silent %!pdftotext "%" -nopgbrk -layout -q -eol unix -
-autocmd BufWritePost *.pdf silent !rm -rf ~/PDF/%
-autocmd BufWritePost *.pdf silent !lp -s -d pdffg "%"
-autocmd BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
-autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
+augroup readPdf
+    autocmd BufReadPre *.pdf set ro nowrap
+    autocmd BufReadPost *.pdf silent %!pdftotext "%" -nopgbrk -layout -q -eol unix -
+    autocmd BufWritePost *.pdf silent !rm -rf ~/PDF/%
+    autocmd BufWritePost *.pdf silent !lp -s -d pdffg "%"
+    autocmd BufWritePost *.pdf silent !until [ -e ~/PDF/% ]; do sleep 1; done
+    autocmd BufWritePost *.pdf silent !mv ~/PDF/% %:p:h
+augroup END

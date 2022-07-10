@@ -75,6 +75,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/todo-comments.nvim'
 Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
+Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
 
 " Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 " Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}

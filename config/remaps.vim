@@ -110,9 +110,9 @@ nnoremap <leader>vt :Vista finder nvim_lsp <CR>
 
 " git
 nnoremap <leader>gs :G<CR>
-nnoremap <leader>3 :Gdiffsplit!<CR>
-nnoremap <leader>1 :diffget //2<CR>
-nnoremap <leader>2 :diffget //3<CR>
+nnoremap <leader>1 :Gdiffsplit!<CR>
+nnoremap <leader>2 :diffget //2<CR>
+nnoremap <leader>3 :diffget //3<CR>
 
 " block the arrow keys
 nnoremap <up> <nop>
@@ -139,8 +139,9 @@ nnoremap <silent><leader>dc :lua require'dap'.run_to_cursor()<Cr>
 " Luasnips
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-" For changing choices in choiceNodes (not strictly necessary for a basic setup).
-imap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-smap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" For changing choices in choiceNodes
+" imap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" smap <silent><expr> <C-e> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 nnoremap <leader><leader>s :so ~/.config/nvim/lua/elias/lsp/luasnips.lua <CR>
+autocmd FileType markdown nnoremap <buffer><leader>gg :Glow<CR>

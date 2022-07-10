@@ -107,7 +107,7 @@ basic.file_right = {
 basic.git = {
     name = 'git',
     hl_colors = {
-        green = { 'green', 'black' },
+        green = { 'yellow', 'black' },
         red = { 'red', 'black' },
         blue = { 'blue', 'black' },
     },

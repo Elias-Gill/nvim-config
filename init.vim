@@ -6,7 +6,7 @@ end
 
 "color themes
 set termguicolors
-let g:newshell_background="medium"
+let g:newshell_background="None"
 colorscheme newshell
 
 " ----- archivos vimL -----
@@ -59,6 +59,7 @@ let g:indent_blankline_char_list = ['┆']
 let g:indent_blankline_context_char = '┆' 
 hi IndentBlanklineContextChar guifg=#ab9457
 
+let g:glow_binary_path = "/bin/glow"
 " let g:vscode_italic_comment = 0
 " let g:vscode_disable_nvimtree_bg = v:true
 " colorscheme vscode

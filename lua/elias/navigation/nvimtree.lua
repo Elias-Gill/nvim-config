@@ -8,9 +8,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     hijack_cursor = true,
     hijack_netrw = true,
     hijack_unnamed_buffer_when_opening = false,
-    ignore_buffer_on_setup = false,
-    open_on_setup = false,
-    open_on_setup_file = false,
+    ignore_buffer_on_setup = true,
+    open_on_setup = true,
+    open_on_setup_file = true,
     open_on_tab = true,
     sort_by = "name",
     root_dirs = {},
@@ -204,4 +204,10 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
             watcher = false,
         },
     },
-} 
+}
+
+-- autoclose on quit
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})

@@ -14,6 +14,10 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body) -- luasnip
         end,
 	},
+    experimental = {
+        native_menu = false,
+        ghost_text = false,
+    },
     -- lsp symbols and decorators for completation
  	formatting = {
         matching = {
@@ -33,7 +37,7 @@ cmp.setup({
                     buffer = "[Buf]",
                     nvim_lua = "[Lua]",
                     path = "[Path]",
-                    cmp_tabnine = "[📠]",
+                    -- cmp_tabnine = "[📠]",
 
                 })[entry.source.name]
                 return vim_item
@@ -57,11 +61,11 @@ cmp.setup({
 	sources = cmp.config.sources({
 		-- this also affects the order in the completion menu
 		--{ name = "ultisnips" },
-        { name = 'cmp_tabnine' },
-		{ name = "luasnip" },
+        -- { name = 'cmp_tabnine' },
+		{ name = "luasnip", max_item_count = 10},
 		{ name = "nvim_lsp" },
 		{ name = "path" },
-		{ name = "buffer" },
+		{ name = "buffer", max_item_count = 10},
 	}),
 })
 -- require("cmp_nvim_ultisnips").setup{}
