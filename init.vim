@@ -52,14 +52,15 @@ let g:python_highlight_space_errors = 0
 " let g:UltiSnipsJumpForwardTrigger = '<tab>'
 " let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/.local/share/vimwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+
 
 let g:indent_blankline_filetype = [ "lua", "vue", "javascript", "python", "html", "c", "vim" ]
 let g:indent_blankline_char_list = ['┆']
 let g:indent_blankline_context_char = '┆' 
 hi IndentBlanklineContextChar guifg=#ab9457
 
-let g:glow_binary_path = "/bin/glow"
 " let g:vscode_italic_comment = 0
 " let g:vscode_disable_nvimtree_bg = v:true
 " colorscheme vscode

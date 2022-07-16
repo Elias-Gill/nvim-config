@@ -65,7 +65,7 @@ nnoremap <silent>]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent>]t :Lspsaga show_line_diagnostics<cr>
 nnoremap <silent><leader>rr :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent>co :Lspsaga code_action<CR>
-nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent>K :lua vim.lsp.buf.hover()<CR>
 inoremap <silent><c-p> <c-o>:Lspsaga signature_help<CR>
 nnoremap <silent><leader>lf :Lspsaga lsp_finder<CR>
 
@@ -99,10 +99,10 @@ nnoremap <C-h> <c-w>h
 
 "Archivos de configuracion
 nnoremap <leader>cd :cd %:h <CR>
-nnoremap <leader>so :so $MYVIMRC<CR>
-nnoremap <leader>SO :tabnew $MYVIMRC<CR>
-nnoremap <leader>sm :e ~/.config/nvim/config/remaps.vim<CR>
-nnoremap <leader>sp :e ~/.config/nvim/plugins.vim<CR>
+nnoremap <silent><leader>so :so $MYVIMRC<CR>
+nnoremap <silent><leader>SO :tabnew $MYVIMRC<CR>
+nnoremap <silent><leader>sm :e ~/.config/nvim/config/remaps.vim<CR>
+nnoremap <silent><leader>sp :e ~/.config/nvim/plugins.vim<CR>
 
 " function tree
 nnoremap <leader>vf :Vista nvim_lsp <CR>
@@ -128,8 +128,8 @@ nnoremap <silent><right> :vertical resize +5<CR>
 nnoremap <leader>mt :MaximizerToggle<cr>
 
 " Debug
-nnoremap <silent><F4> :lua require'dap'.step_into()<cr>
-nnoremap <silent><F5> :lua require'dap'.step_over()<cr>
+nnoremap <silent><F7> :lua require'dap'.step_into()<cr>
+nnoremap <silent><F6> :lua require'dap'.step_over()<cr>
 nnoremap <silent><leader>db :lua require'dap'.continue()<Cr>
 nnoremap <silent><leader>du :lua require'dap'.toggle_breakpoint()<Cr>
 nnoremap <silent><leader>ds :lua require'dap'.terminate()<Cr>
