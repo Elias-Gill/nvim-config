@@ -13,7 +13,7 @@ Plug 'dstein64/vim-startuptime'
 
 " Git inegration
 Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
+" Plug 'lewis6991/gitsigns.nvim'
 " Plug 'APZelos/blamer.nvim'
 
 " Functions tree
@@ -30,14 +30,13 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'onsails/lspkind.nvim'
-" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' } "tabnine AI autocomplete
+"Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' } "tabnine AI autocomplete
 "Plug 'SirVer/ultisnips'
 "Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Tree sitter 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'andymass/vim-matchup'
 
 "Lsp and snippets
 Plug 'neovim/nvim-lspconfig'
@@ -54,7 +53,7 @@ Plug 'windwp/windline.nvim'
 "File search and tree
 Plug 'ibhagwan/fzf-lua'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kevinhwang91/rnvimr'
+" Plug 'kevinhwang91/rnvimr'
 
 " Fonts and icons
 Plug 'ryanoasis/vim-devicons'
@@ -62,7 +61,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Themes, colororschemes and customization
 Plug 'elias-gill/newshell.nvim'
-Plug 'Mofiqul/vscode.nvim'
 
 " Pareado (){}""'' y ayudas de indentacion
 Plug 'windwp/nvim-autopairs'

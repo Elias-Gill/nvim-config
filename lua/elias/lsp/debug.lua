@@ -33,14 +33,16 @@ local dap, dapui = require("dap"), require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
 end
+-- on exit close the UI
 dap.listeners.before.event_terminated["dapui_config"] = function()
     dapui.close()
 end
+-- on exit close the UI
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
-
 dap.defaults.fallback.terminal_win_cmd = '9split new'
+-- External terminal
 --[[ dap.defaults.fallback.force_external_terminal = true
 dap.defaults.fallback.external_terminal = {
     command = '/usr/bin/alacritty';

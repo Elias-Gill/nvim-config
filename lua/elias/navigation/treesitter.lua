@@ -2,6 +2,13 @@
 require'colorizer'.setup()
 --treesitter
 require'nvim-treesitter.configs'.setup {
+    -- ts-comment settings
+    --[[ context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+        css = '// %s'
+    }, ]]
+
     indent = {
         enable = true,
     },

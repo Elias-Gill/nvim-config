@@ -24,7 +24,7 @@ lua require('elias/lsp/debug')
 
 " utils
 lua require('elias/utils/windline') 
-lua require('elias/utils/gitsigns') 
+" lua require('elias/utils/gitsigns') 
 lua require('elias/utils/various-utils') 
 " lua require('elias/utils/sniprun') 
 
